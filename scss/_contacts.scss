@@ -1,0 +1,249 @@
+.contact-body {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(90deg, #F1F1F1 50%, $white 50%);
+  #arrow {
+    position: absolute;
+    top: 20%;
+    left: 42%;
+    z-index: 5;
+  }
+
+  &::after {
+    background: #E9E9E9;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(100% 0, 96% 0, 100% 70%);
+    top: 0;
+    right: 50%;
+    z-index: -1;
+    opacity: 1;
+    content: "";
+  } 
+}
+section.contacts {
+  position: relative;
+  margin-bottom: 0;
+
+  
+}
+
+.contacts-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 182px);
+
+  .left-side {
+    width: 50%;
+    position: relative;
+
+    h5 {
+      margin-bottom: 5px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      line-height: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    .location-text {
+      margin-bottom: 3rem;
+    }
+    p {
+      color: $black;
+      line-height: .825rem;
+      font-weight: 800;
+    }
+  }
+
+  .right-side {
+    width: 50%;
+    padding-left: 5rem;
+
+    /*----------- FORM STYLING ----------- */
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: $black;
+      opacity: 1; /* Firefox */
+    }
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: $black;
+    }
+    ::-ms-input-placeholder { /* Microsoft Edge */
+      color: $black;
+    }
+    form {
+      input,
+      select,
+      textarea {
+        font-family: "Helvetica Now Display DW", sans-serif;
+        outline: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0;
+      } 
+      form input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+        box-shadow: 0 0 0 1000px #fff inset !important;
+      }
+      input[type="email"],
+      input[type="number"],
+      input[type="password"],
+      input[type="tel"],
+      input[type="text"],
+      textarea {
+        background: $white;
+        width: 100%;
+        height: 45px;
+        font-size: 1.125rem;
+        line-height: 1.875rem;
+        font-weight: 500;
+        color: $black;
+        padding: 8px 0 6px 0;
+        border: 1px solid $medium;
+        border-width: 0 0 1px 0;
+      }
+      textarea {
+        padding: 8px 0 6px 0;
+        display: block;
+        height: auto;
+        min-height: 45px;
+        resize: none;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        max-height: 160px;
+      }
+      textarea::-webkit-scrollbar {
+        width: 3px;
+        background: transparent; 
+      }
+      
+      textarea::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: $grey; 
+      }
+      select {
+        background: $white url(../assets/img/icons/icon_select_gray.svg) no-repeat top 15px right 15px;
+        background-size: 20px 20px;
+        width: 100%;
+        height: 50px;
+        font-size: 1.125rem;
+        line-height: 50px;
+        font-weight: 500;
+        color: $black;
+        cursor: pointer;
+        padding: 1px 50px 0 20px;
+        border: 1px solid $medium;
+        transition: all 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+        option {
+          padding-left: 20px;
+          padding-right: 50px;
+        }
+      }
+      select:active,
+      select:focus {
+        background-color: $light;
+      }
+      select::-ms-expand {
+        display: none;
+      }
+
+      button {
+        position: relative;
+        background: $white;
+        display: block;
+        width: auto;
+        font-family: "Helvetica Now Display DW", sans-serif;
+        font-size: 1.125rem;
+        font-weight: 800;
+        line-height: 0;
+        margin-top: 10px;
+        text-align: left;
+        color: $black;
+        cursor: pointer;
+        border: none;
+        transition: .1s all linear;
+      }
+      
+      button.special:after {
+        height: 2px;
+        border-bottom: 2px solid $black;
+        background: 0 0;
+        position: absolute;
+        display: block;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        content: "";
+        transition: opacity 0.2s linear;
+        opacity: 0;
+        -webkit-transform: translate(0, 100%);
+        -ms-transform: translate(0, 100%);
+        transform: translate(0, 100%);
+      }
+      button.special:active:after,
+      button.special:hover:after,
+      button.with-icon:active:after,
+      button.with-icon:hover:after {
+        opacity: 1;
+      }
+
+      button:disabled {
+        cursor: default;
+      }
+
+      button > span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      button > span .icon {
+        height: 22px;
+        width: 22px;
+        margin-right: 10px;
+      }    
+    }
+
+    .contact-form {
+      display: grid;
+      grid-template-areas:
+      "name email"
+      "service budget"
+      "message message";
+      grid-gap: 2rem;
+
+      label {
+        font-size: .8rem;
+        color: $grey;
+      }
+      .name {
+        display: flex;
+        flex-direction: column;
+        grid-area: name;
+      }
+      .email {
+        display: flex;
+        flex-direction: column;
+        grid-area: email;
+      }
+      .service {
+        display: flex;
+        flex-direction: column;
+        grid-area: service;
+      }
+      .budget {
+        display: flex;
+        flex-direction: column;
+        grid-area: budget;
+      }
+      .message {
+        display: flex;
+        flex-direction: column;
+        grid-area: message;
+      }
+    }
+  }
+}

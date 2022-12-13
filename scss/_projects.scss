@@ -1,0 +1,223 @@
+section.project {
+  &-top {
+    margin-bottom: 0;
+    padding-bottom: 8.75rem;
+    .wrapper {
+      .heading {
+        padding: 300px 0 100px 0;
+      }
+    }
+  }
+
+  &-services {
+    margin-bottom: 0;
+    padding-bottom: 8.75rem;
+    
+    .row {
+      display: flex;
+      position: relative;
+
+      .flex-col{
+        width: 33.333%;
+
+        h5 {
+          padding-bottom: 1rem;
+          letter-spacing: 0.05rem;
+          font-size: .8rem;
+        }
+
+        p {
+          color: $black;
+          font-size: 1.275rem;
+        }
+
+        .stripe {
+          display: block;
+          width: 100%;
+          height: 1px;
+          background-color: $medium;
+          margin-bottom: 2rem;
+        }
+      }
+
+      .flex-col:nth-child(1) {
+        padding-right: 4rem;
+      }
+      .flex-col:nth-child(2) {
+        padding: 0 2rem;
+      }
+      .flex-col:nth-child(3) {
+        padding-left: 4rem;
+      }
+    }
+    
+  }
+
+  &-photos {
+    padding: 10rem 0;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1 !important;
+    .single-image {
+      .overlay-image-top {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 25%;
+        z-index: 2;
+
+        &.pencil {
+          width: 20%;
+          top: 45%;
+          left: 45%;
+        }
+
+        &.pencil-small {
+          width: 20%;
+          top: 40%;
+          left: 55%;
+        }
+      }
+
+      .mobile-devices {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 15%;
+          margin: 0 5rem;
+        }
+      }
+
+      .playpauze {
+        video {
+          width: 100%;
+          // overflow: hidden;
+        }
+      }
+    }
+
+    &.bg-light {
+      background-color: $light;
+    }
+
+    &.bg-dark {      
+      background-color: #000000;
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+      
+      .single-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 120%;
+        } 
+        .playpauze {
+          video {
+            width: 100%;
+          } 
+        }
+                  
+      }
+
+      &.phones {
+        .single-image {
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &-next {
+    padding-top: 200px;
+    margin-bottom: 0;
+    background-color: $light;
+    overflow: hidden;
+
+    .wrapper a{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      border-bottom: 1px solid #e7e8e9;
+
+      h1 {
+        transition: .6s all cubic-bezier(.7, 0, .3, 1);
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        h1 {
+          opacity: .5;
+        }
+        .tile-image-wrap {
+          transform: translateY(-50%) !important;
+        }
+      }
+
+      a.with-icon::after {
+        height: 1px;
+        border-bottom: 7px solid $black;
+        background: 0 0;
+        display: block;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        content: '';
+        transition: all .2s linear ;
+        transform: translate(0, 100%);
+        opacity: 0;
+      }     
+    }
+
+    img {
+      padding-top: 15px;
+      margin-left: 15px;
+      width: 52px;
+      height: 52px;
+    }
+
+    img.img-180 {
+      padding-top : 0;
+      padding-bottom: 15px;
+      rotate: 180deg;
+    }
+
+    .tile-image-wrap {
+      transition: .6s all cubic-bezier(.7, 0, .3, 1);
+      height: 150px;
+      .tile-image {    
+        .overlay-image {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+          img {
+            width: 25%;
+            height: auto;
+          }
+        }
+      }
+
+      .row {
+        z-index: 1;
+        height: 200px;
+        padding-bottom: 200px;
+      }
+      
+    }
+
+  }
+}
+
+footer.footer-projects {
+  background-color: $light;
+  // padding-top:200px;
+}

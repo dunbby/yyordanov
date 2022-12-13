@@ -1,0 +1,145 @@
+section.about {
+
+  &-top {
+    margin-bottom: 0;
+    padding-bottom: 8.75rem;
+    .wrapper {
+      .heading {
+        padding: 300px 0 150px 0;
+        border-bottom: 1px solid #e7e8e9;
+      }
+    }
+  }
+
+  &-image {
+    margin-bottom: 0;
+    
+    
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+
+      .flex-col:nth-child(1) {
+        width: 35%;
+
+        h3:first-child {
+          color: $black !important;
+          padding: 0 5rem 1rem 0;
+        }
+      }
+      .flex-col:nth-child(2) {
+        width: 65%;
+
+        .single-about-image {
+          width: 100%;
+          display: block;
+          overflow: hidden;
+          position: relative;
+
+          .overlay {
+            img {
+              &::before{
+                content: "";
+                display: block;
+                padding-top: 135%;
+              }
+              position: relative;
+              top: -10vh;
+              height: 105%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-services {
+    margin-bottom: 0;
+    padding-bottom: 8.75rem;
+    padding-top: 8.75rem;
+    
+    .row {
+      display: flex;
+      position: relative;
+
+      .flex-col{
+
+        h2 {
+          padding-bottom: 6rem;
+        }
+
+        h4 {
+          font-size: 2.5rem;
+          font-weight: 400;
+        }
+
+        h5 {
+          padding-bottom: 1rem;
+        }
+
+        p {
+          padding-top: 4rem;
+        }
+
+        .stripe {
+          display: block;
+          width: 100%;
+          height: 1px;
+          background-color: $medium;
+          margin-bottom: 3rem;
+        }
+      }
+
+      .flex-col:nth-child(2) {
+        padding: 0 4rem;
+      }
+    }
+    
+  }
+}
+
+.home-quick-contact.about-contact {
+  padding: 100px 0;
+}
+
+footer.about-footer {
+  .wrapper {
+    border-top: 1px solid #e7e8e9;
+  }
+}
+
+/* ------------ Dots Animation ------------- */
+.animate-dot {
+  opacity: 0;
+  animation: animateDot1 2s linear infinite;
+}
+
+.animate-dot:nth-child(2) {
+  animation: animateDot2 2s linear infinite;
+}
+
+.animate-dot:nth-child(3) {
+  animation: animateDot3 2s linear infinite;
+}
+
+@keyframes animateDot1 {
+  0%   {opacity: 0; }
+  20%  {opacity: 0;}
+  30%  {opacity: 1;}
+  90% {opacity: 1;}
+}
+
+@keyframes animateDot2 {
+  0%   {opacity: 0; }
+  35%  {opacity: 0;}
+  45%  {opacity: 1;}
+  90% {opacity: 1;}
+}
+
+@keyframes animateDot3 {
+  0%   {opacity: 0; }
+  50%  {opacity: 0;}
+  60%  {opacity: 1;}
+  90% {opacity: 1;}
+}

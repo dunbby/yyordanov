@@ -1,0 +1,30 @@
+<svg id="logo" xmlns="http://www.w3.org/2000/svg" width="300" height="150" viewBox="0 0 300 150">
+  <g id="pc" transform="translate(0 24)">
+    <g id="Component_4_1" data-name="Component 4 – 1">
+      <g id="Rectangle_1" data-name="Rectangle 1" fill="none" stroke="#000" stroke-width="3">
+        <rect width="136" height="85" rx="6" stroke="none"/>
+        <rect x="1.5" y="1.5" width="133" height="82" rx="4.5" fill="none"/>
+      </g>
+      <g id="Rectangle_2" data-name="Rectangle 2" transform="translate(56 82)" fill="none" stroke="#000" stroke-width="3">
+        <rect width="25" height="25" stroke="none"/>
+        <rect x="1.5" y="1.5" width="22" height="22" fill="none"/>
+      </g>
+      <line id="Line_1" data-name="Line 1" x2="50" transform="translate(43.5 105.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+    </g>
+    <line id="Line_6" data-name="Line 6" x2="40" transform="translate(78 25.18) rotate(120)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+    <g id="Component_3_1" data-name="Component 3 – 1" transform="translate(26 31.5)">
+      <line id="Line_2" data-name="Line 2" x2="22" transform="translate(0 11) rotate(30)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+      <line id="Line_3" data-name="Line 3" x2="22" transform="translate(0 11) rotate(-30)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+    </g>
+    <g id="Component_2_1" data-name="Component 2 – 1" transform="translate(90.947 31.5)">
+      <line id="Line_4" data-name="Line 4" x2="22" transform="translate(19.053 11) rotate(150)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+      <line id="Line_5" data-name="Line 5" x2="22" transform="translate(19.053 11) rotate(-150)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+    </g>
+  </g>
+  <g id="Component_6_1" data-name="Component 6 – 1" transform="translate(158)">
+    <text id="Y" transform="translate(0 131)" font-size="150" font-family="HelveticaNowDisplay-ExtraBold, Helvetica Now Display" font-weight="800" letter-spacing="0.001em"><tspan x="0" y="0">Y</tspan></text>
+  </g>
+  <g id="Component_5_1" data-name="Component 5 – 1" transform="translate(194)">
+    <text id="Y-2" data-name="Y" transform="translate(0 131)" font-size="150" font-family="HelveticaNowDisplay-ExtraBold, Helvetica Now Display" font-weight="800" letter-spacing="0.001em"><tspan x="0" y="0">Y</tspan></text>
+  </g>
+</svg>
