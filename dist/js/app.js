@@ -513,6 +513,15 @@ function initScrollTriggerAnimations() {
   }
 }
 
+/* ------------------------ Init Lazy Load ------------------------ */
+function initLazyLoad() {
+  // https://github.com/locomotivemtl/locomotive-scroll/issues/225
+  // https://github.com/verlok/vanilla-lazyload
+  var lazyLoadInstance = new LazyLoad({ 
+    elements_selector: ".lazy",
+  });
+}
+
 /* ------------------------ Init Play Video ------------------------ */
 function initPlayVideoInview() {
 
@@ -557,14 +566,14 @@ function initPageTransitions() {
   barba.init({
     sync: true,
     timeout:7000,
-    debug: true,
     transitions: [{
       name: 'default',
       async once(data) {   
         // do something once on the initial page load
         initSmoothScroll(data.next.container);
         initScrollTriggerAnimations();  
-        initPlayVideoInview();
+        initLazyLoad();
+        initPlayVideoInview()
         initLoader();  
       },
       async leave(data) {
@@ -581,7 +590,8 @@ function initPageTransitions() {
       async beforeEnter(data) {        
         ScrollTrigger.getAll().forEach(t => t.kill());
         initScrollTriggerAnimations();
-        initPlayVideoInview();
+        initLazyLoad();
+        initPlayVideoInview()
         scroll.destroy();
         initSmoothScroll(data.next.container);
         if (document.querySelector("section.home-top")) {
@@ -600,7 +610,7 @@ function initPageTransitions() {
         // do something once on the initial page load
         initSmoothScroll(data.next.container);
         initScrollTriggerAnimations();
-
+        initLazyLoad();
         socialsBounceAnimation();
         heroContentAnimation(3);
         initLoaderHome();
