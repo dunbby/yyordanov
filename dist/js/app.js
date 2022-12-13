@@ -566,6 +566,7 @@ function initPageTransitions() {
   barba.init({
     sync: true,
     timeout:7000,
+    debug: true,
     transitions: [{
       name: 'default',
       async once(data) {   
