@@ -513,15 +513,6 @@ function initScrollTriggerAnimations() {
   }
 }
 
-/* ------------------------ Init Lazy Load ------------------------ */
-function initLazyLoad() {
-  // https://github.com/locomotivemtl/locomotive-scroll/issues/225
-  // https://github.com/verlok/vanilla-lazyload
-  var lazyLoadInstance = new LazyLoad({ 
-    elements_selector: ".lazy",
-  });
-}
-
 /* ------------------------ Init Play Video ------------------------ */
 function initPlayVideoInview() {
 
@@ -573,7 +564,6 @@ function initPageTransitions() {
         // do something once on the initial page load
         initSmoothScroll(data.next.container);
         initScrollTriggerAnimations();  
-        initLazyLoad();
         initPlayVideoInview();
         initLoader();  
       },
@@ -591,7 +581,6 @@ function initPageTransitions() {
       async beforeEnter(data) {        
         ScrollTrigger.getAll().forEach(t => t.kill());
         initScrollTriggerAnimations();
-        initLazyLoad();
         initPlayVideoInview();
         scroll.destroy();
         initSmoothScroll(data.next.container);
@@ -611,7 +600,7 @@ function initPageTransitions() {
         // do something once on the initial page load
         initSmoothScroll(data.next.container);
         initScrollTriggerAnimations();
-        initLazyLoad();
+
         socialsBounceAnimation();
         heroContentAnimation(3);
         initLoaderHome();
