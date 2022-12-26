@@ -1,7 +1,7 @@
 // Container
 .wrapper {
-  max-width: $website-width;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
+  width: 100%;
   margin: auto;
   overflow: hidden;
 }
@@ -36,3 +36,4 @@
     margin: 4rem 0;
   }
 }
+

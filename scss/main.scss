@@ -5,7 +5,6 @@
 @import "projects";
 @import "about";
 
-
 /* ------------ General styles ------------ */
 
 * {
@@ -99,10 +98,6 @@ ul {
 
 img {
   width: 100%;
-}
-
-.wrapper {
-  width: $website-width;
 }
 
 section {
@@ -205,7 +200,7 @@ header#header {
     min-width: 167px;
     z-index: 1;
     border: 0 none;
-    margin-left: 40px;
+    margin-left: 1rem;
     color: $black;
     transition: .2s all ease;
     
@@ -237,13 +232,17 @@ header#header {
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 0.2em;
-        margin-right: 40px;
+        margin-right: 2.5rem;
         transition: .2s all ease;
 
         &:first-child:hover, 
         &:nth-child(2):hover, 
         &:nth-child(3):hover {
           transform: scale(1.05);
+        }
+
+        &:last-child {
+          margin-right: 1rem;
         }
 
         a {
@@ -589,8 +588,8 @@ section.home{
 /*------------ Socials ------------ */
 .socials-container  {
   position: fixed;
-  right: 40px;
-  bottom: 40px;
+  right: 1rem;
+  bottom: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -623,8 +622,8 @@ a.contact-link {
   position: fixed;
   width: 46px;
   height: 46px;
-  left: 40px;
-  bottom: 40px;
+  left: 1rem;
+  bottom: 1rem;
   z-index: 20;
   padding: 13px;
   border: 0 none;
@@ -678,6 +677,7 @@ footer {
   .wrapper {
     .row {
       display: flex;    
+      gap: 10rem;
 
       h3 {
         color: $black;
@@ -686,10 +686,6 @@ footer {
       .contact-links li{
         color: $grey;
       } 
-
-      & > div {
-        margin-right: 10rem;
-      }
 
       padding-top: 5rem;
       border-top: 1px solid #e7e8e9;
@@ -756,3 +752,4 @@ footer {
   }
 }
 
+@import "media";

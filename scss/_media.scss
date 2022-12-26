@@ -1,0 +1,131 @@
+// ------------- Wrapper & Static Content on the outsid -------------- //
+@media (min-width: $bp-med) and (min-height: $bp-small-3) {
+  .wrapper {
+      padding: 0 2rem;
+  }
+  .socials-container {
+    right: 2rem;
+    bottom: 2rem;
+  }
+  header#header .logo {
+    margin-left: 2rem;
+  }
+  header#header .menu ul li:last-child {
+    margin-right: 2rem;
+  }
+  a.contact-link {
+    left: 2rem;
+    bottom: 2rem;
+  }
+}
+@media (min-width: $bp-xxl) {
+  .wrapper {
+      padding: 0 2.5rem;
+  }
+  .socials-container {
+    right: 2.5rem;
+    bottom: 2.5rem;
+  }
+  header#header .logo {
+    margin-left: 2.5rem;
+  }
+  header#header .menu ul li:last-child {
+    margin-right: 2.5rem;
+  }
+  a.contact-link {
+    left: 2.5rem;
+    bottom: 2.5rem;
+  }
+}
+@media (min-width: $bp-xxl-2) {
+  .wrapper {
+      max-width: $website-width;
+  }
+}
+@media (max-width: $bp-xxl-2) {
+  .socials-container {
+      display: none;
+  }
+}
+
+// ------------- General Font Sizes -------------- //
+@media (min-width: $bp-med) and (min-height: $bp-small-3) and (max-width: $bp-xxl-2) {
+  h1,.h1 {
+    &.large {
+      font-size: 3.875rem;
+      line-height: 4.0625rem;
+    }
+    &.extra-large {
+      font-size: 6.875rem;
+      line-height: 7.2625rem;
+    }
+  }
+
+  // Arrow
+  section.home-quick-contact img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: $bp-med) {
+  h1,.h1 {
+    &.large {
+      font-size: 2.125rem;
+      line-height: 2.5rem;
+    }
+    &.extra-large {
+      font-size: 4.875rem;
+      line-height: 5.0625rem;
+    }
+  }
+  // Arrow  
+  section.home-quick-contact img {
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+    line-height: 1.5625rem;
+  }
+}
+
+// ------------- Home Page -------------- //
+@media (max-width: $bp-xxl) {
+  footer .wrapper .row {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: $bp-med-2) { 
+  section.home-portfolio .list {
+    grid-template-columns: none;
+    grid-template-rows:  repeat(2, 1fr);
+  }
+  footer .wrapper .row {
+    gap: 1rem;   
+  }
+}
+
+@media (max-width: $bp-small-2) {
+  section.home-quick-contact .wrapper {
+    align-items: flex-start;
+  }
+
+  footer .wrapper .row {
+    flex-wrap: wrap;
+
+    & > div {
+      margin-bottom: 2.5rem;
+
+      h3 br {
+        display: none;
+      }
+    }
+  }
+
+  
+}
+
