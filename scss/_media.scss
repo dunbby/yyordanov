@@ -125,7 +125,25 @@
       }
     }
   }
-
-  
 }
 
+// ------------- About Page -------------- //
+@media (max-width: $bp-large-2) {
+  section.about-image .row {
+    flex-direction: column;
+
+    .flex-col:nth-child(1) {
+      width: 100%;
+    }
+    .flex-col:nth-child(2) {
+      width: 100%;
+      margin-top: 5rem;
+    }
+  }
+}
+
+@media (max-width: $bp-med) {
+  section.about-services .row {
+    flex-direction: column;
+  }
+}
