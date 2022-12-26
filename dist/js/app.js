@@ -662,7 +662,18 @@ function initPageTransitions() {
       el: container.querySelector('[data-scroll-container]'),
       smooth: true,
       smoothMobile: true,
-      lerp: 0.03
+      lerp: 0.03,
+      getDirection: true,
+      mobile: {
+        breakpoint: 0,
+        smooth: false,
+        getDirection: true,
+      },
+      tablet: {
+        breakpoint: 0,
+        smooth: false,
+        getDirection: true,
+      }
     });
     // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
     window.onresize = scroll.update();
