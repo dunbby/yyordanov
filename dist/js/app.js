@@ -559,9 +559,9 @@ function delay(n) {
 function initPageTransitions() {
 
   // scroll to the top of the page
-  barba.hooks.enter(() => {
-    window.scrollTo(0, 0);
-  });
+  // barba.hooks.enter(() => {
+  //   window.scrollTo(0, 0);
+  // });
 
   barba.init({
     sync: true,
