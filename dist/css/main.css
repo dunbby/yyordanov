@@ -1986,6 +1986,17 @@ footer .wrapper .copyright > div .small .icon-heart img {
     display: none;
   }
 }
+@media (max-width: 24em) {
+  footer .wrapper .copyright > div .logo img {
+    height: 30px;
+    min-width: 30px;
+    padding-right: 0.5rem;
+  }
+  footer .wrapper .copyright p.small {
+    font-size: 0.6rem;
+    line-height: 0.8rem;
+  }
+}
 @media (max-width: 54.5em) {
   section.about-image .row {
     flex-direction: column;
