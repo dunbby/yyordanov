@@ -72,16 +72,20 @@
 }
 
 // ------------- Transparent Background on Mobile -------------- //
-@media (max-width: $bp-small-2), (orientation: landscape) {
-
+@media screen and (orientation:landscape) and (max-device-height: $bp-small-2), (max-width: $bp-small-2) {
   section.home-top {
     background: url(../assets/img/bg-home-transparent.png) no-repeat;
     background-size: cover;
-    background-position: 60% 0%;
+    background-position: 60% 10% !important;
   }
 
-  header#header.header-home ul li span {
-    color: $black;
+  header#header.header-home ul li span,
+  header#header.header-home ul li a {
+    color: $black
+  }
+  header#header.header-home ul li .cta-btn {
+    color: $white;
+    background-color: $black;
   }
   header#header.header-home .logo {
     filter: none;
