@@ -938,6 +938,7 @@ main .btn-hamburger.active {
   display: flex;
   flex-wrap: wrap;
   position: relative;
+  margin-bottom: clamp(2rem, 2.3vw, 3rem);
 }
 
 .nav-active .fixed-nav-inner {
@@ -1092,6 +1093,9 @@ main .btn-hamburger.active {
   .fixed-nav .social-row .stripe {
     display: block;
     margin-bottom: 1rem;
+  }
+  .fixed-nav-inner {
+    justify-content: flex-start;
   }
   .fixed-nav-rounded-div .rounded-div-wrap {
     width: 20vw;
