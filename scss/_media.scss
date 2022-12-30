@@ -247,3 +247,23 @@
     flex-direction: column;
   }
 }
+
+// ------------- Projects Pages -------------- //
+
+@media (max-width: $bp-xl) {
+  section.project-next .tile-image-wrap {
+    width: 40vw;
+  }
+}
+
+@media (max-width: $bp-med) {
+  section.project-next .tile-image-wrap {
+    width: 50vw;
+  }
+}
+
+@media (max-width: $bp-small-3) {
+  section.project-next .tile-image-wrap {
+    width: 70vw;
+  }
+}
