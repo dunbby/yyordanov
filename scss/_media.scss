@@ -211,15 +211,19 @@
 }
 
 @media (max-width: $bp-small) {
-  footer .wrapper .copyright > div .logo img {
-    height: 30px;
-    min-width: 30px;
-    padding-right: .5rem;
-  }
+  footer .wrapper .copyright {
 
-  footer .wrapper .copyright p.small {
-    font-size: .6rem;
-    line-height: .8rem;
+    padding-bottom: 10px;
+      & > div .logo img {
+        height: 30px;
+        min-width: 30px;
+        padding-right: 1rem;
+      }
+
+    p.small {
+      font-size: .6rem;
+      line-height: .8rem;
+    }
   }
 }
 

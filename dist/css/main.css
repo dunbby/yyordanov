@@ -1762,13 +1762,13 @@ footer .wrapper .copyright {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 50px;
+  margin-top: 50px;
 }
 footer .wrapper .copyright > div {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding-bottom: 50px;
-  margin-top: 50px;
 }
 footer .wrapper .copyright > div .logo img {
   height: 40px;
@@ -1987,10 +1987,13 @@ footer .wrapper .copyright > div .small .icon-heart img {
   }
 }
 @media (max-width: 24em) {
+  footer .wrapper .copyright {
+    padding-bottom: 10px;
+  }
   footer .wrapper .copyright > div .logo img {
     height: 30px;
     min-width: 30px;
-    padding-right: 0.5rem;
+    padding-right: 1rem;
   }
   footer .wrapper .copyright p.small {
     font-size: 0.6rem;
