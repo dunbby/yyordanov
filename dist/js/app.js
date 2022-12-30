@@ -328,107 +328,45 @@ function socialsBounceAnimation() {
   }, "-=2")
 }
 
-/* ------------------------ Hero Content Animations ------------------------ */
-function heroContentAnimation(delay) {
-  let tl = gsap.timeline();
-
-  tl.from('.text-reveal', {
-    opacity: 0,
-    duration: 1,
-    y: 100,
-    stagger: 0.3,
-    ease: "Expo.easeOut",
-    delay: delay
-  })
-  .from('.hero-image', {
-    opacity: 0,
-    duration: 1,
-    ease: "Expo.easeOut",
-    y: 100
-  }, "-=1") 
-  .from("#Group_138", {rotateZ: -45, duration: 4, ease: "elastic.out(1, 0.3)"},"-=2")
-  .from("#Group_163", {rotateZ: -45, duration: 4, ease: "elastic.out(1, 0.3)"},"-=3")
-  .from("#Group_35", {y: -100, duration: 1},"-=3.9")
-  .from('.bg-title', {
-    opacity: 0,
-    duration: 0.4
-  },"-=3")
-  .from('.scroll-to', {
-    opacity: 0,
-    duration: 2,
-  },"-=3") 
-
-
-  // Hero Illustration Animations
-  gsap.to("#Group_203", {
-    y: -10,
-    repeat: -1,
-    yoyo: true,
-    duration: 2.2,
-    ease: "slow"
-  });
-  gsap.to("#Group_138", {
-    y: 10,
-    repeat: -1,
-    yoyo: true,
-    duration: 2.5,
-    ease: "slow"
-  });
-  gsap.to("#Group_185", {
-    y: 5,
-    repeat: -1,
-    yoyo: true,
-    duration: 3,
-    ease: "slow"
-  });
-  gsap.to("#Group_30", {
-    y: -25,
-    x: -50,
-    repeat: -1,
-    yoyo: true,
-    duration: 7,
-    ease: "slow"
-  });
-  gsap.to("#Group_163", {
-    y: -10,
-    repeat: -1,
-    yoyo: true,
-    duration: 2,
-    ease: "slow"
-  });
-  gsap.to("#Group_170", {
-    y: -10,
-    repeat: -1,
-    yoyo: true,
-    duration: 2.4,
-    ease: "slow"
-  });
-  gsap.to("#Group_183", {
-    y: -10,
-    repeat: -1,
-    yoyo: true,
-    duration: 2.6,
-    ease: "slow"
-  });
-  gsap.to("#Group_113", {
-    y: 10,
-    repeat: -1,
-    yoyo: true,
-    duration: 2.5,
-    ease: "slow"
-  });
-  gsap.to("#Group_172", {
-    y: 5,
-    repeat: -1,
-    yoyo: true,
-    duration: 1.2,
-    ease: "slow"
+/* ------------------------ Init Scroll Trigger Navigation ------------------------ */
+function initScrolltriggerNav() {
+    
+  ScrollTrigger.create({
+    start: 'top -30%',
+    onUpdate: self => {
+      $("main").addClass('scrolled');
+    },
+    onLeaveBack: () => {
+      $("main").removeClass('scrolled');
+    },
   });
 }
 
 /* ------------------------ Init Scroll Trigger Animations ------------------------ */
 function initScrollTriggerAnimations() {
 
+  if(document.querySelector(".footer-wrap")) {
+    // Scrolltrigger Animation : Footer + hamburger
+    $(".footer-wrap").each(function (index) {
+      let triggerElement = $(this);
+      let targetElementHamburger = $(".btn-hamburger .btn-click");
+  
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: triggerElement,
+          start: "50% 100%",
+          end: "100% 120%",
+          scrub: 0
+        }
+      });
+      tl.from(targetElementHamburger, {
+        boxShadow: "0px 0px 0px 0px rgb(0, 0, 0)",
+        ease: "none"
+      });
+    });
+    }
+
+    
   // Scrolltrigger Animation : About Services BG
   if(document.querySelector(".about-services")) {
     $(".about-services").each(function (index) {
@@ -544,7 +482,51 @@ function initPlayVideoInview() {
 
   });
 }
+
+/* ------------------------ Hamburger Nav Open/Close ------------------------ */
+function initHamburgerNav() {
     
+  // Open/close navigation when clicked .btn-hamburger
+
+  $(document).ready(function(){
+    $(".btn-hamburger, .btn-menu").click(function(){
+      if ($(".btn-hamburger, .btn-menu").hasClass('active')) {
+          $(".btn-hamburger, .btn-menu").removeClass('active');
+          $(".btn-hamburger, .btn-menu").removeClass('checked');
+          $("main").removeClass('nav-active');
+          scroll.start();
+      } else {
+          $(".btn-hamburger, .btn-menu").addClass('active');
+          $(".btn-hamburger, .btn-menu").addClass('checked');
+          $("main").addClass('nav-active');
+          scroll.stop();
+      }
+    });
+    $('.fixed-nav-back').click(function(){
+      $(".btn-hamburger, .btn-menu").removeClass('active');
+      $(".btn-hamburger, .btn-menu").removeClass('checked');
+      $("main").removeClass('nav-active');
+      scroll.start();
+    });
+    $('.projects-link').click(function(){
+      $(".btn-hamburger, .btn-menu").removeClass('active');
+      $(".btn-hamburger, .btn-menu").removeClass('checked');
+      $("main").removeClass('nav-active');
+      scroll.start();
+    });
+  });
+  $(document).keydown(function(e){
+    if(e.keyCode == 27) {
+      if ($('main').hasClass('nav-active')) {
+          $(".btn-hamburger, .btn-menu").removeClass('active');
+          $("main").removeClass('nav-active');
+          scroll.start();
+      } 
+    }
+  });
+
+}
+
 /* ------------------------ Delay Function ------------------------ */
 function delay(n) {
   n = n || 2000
@@ -555,6 +537,15 @@ function delay(n) {
   })
 }
 
+/* ------------------------ Fire all scripts on page load ------------------------ */
+function initScript() {
+  initHamburgerNav();
+  initScrolltriggerNav();
+  initLazyLoad();
+  initPlayVideoInview();
+  initScrollTriggerAnimations();
+}
+
 /* ------------------------ Init Page Transitions ------------------------ */
 function initPageTransitions() {
 
@@ -562,6 +553,13 @@ function initPageTransitions() {
   barba.hooks.enter(() => {
     window.scrollTo(0, 0);
   });
+
+  if ($(window).width() > 540) { 
+    barba.hooks.leave(() => {
+      $(".btn-hamburger, .btn-menu").removeClass('active');
+      $("main").removeClass('nav-active');
+    }); 
+  }
 
   barba.init({
     sync: true,
@@ -572,9 +570,7 @@ function initPageTransitions() {
       async once(data) {   
         // do something once on the initial page load
         initSmoothScroll(data.next.container);
-        initScrollTriggerAnimations();  
-        initLazyLoad();
-        initPlayVideoInview()
+        initScript();
         initLoader();  
       },
       async leave(data) {
@@ -590,14 +586,9 @@ function initPageTransitions() {
       },
       async beforeEnter(data) {        
         ScrollTrigger.getAll().forEach(t => t.kill());
-        initScrollTriggerAnimations();
-        initLazyLoad();
-        initPlayVideoInview()
+        initScript();
         scroll.destroy();
         initSmoothScroll(data.next.container);
-        if (document.querySelector("section.home-top")) {
-          heroContentAnimation(1);
-        }
       },
     }, 
     {
@@ -610,46 +601,39 @@ function initPageTransitions() {
       once(data) {
         // do something once on the initial page load
         initSmoothScroll(data.next.container);
-        initScrollTriggerAnimations();
-        initLazyLoad();
+        initScript();
         socialsBounceAnimation();
-        heroContentAnimation(3);
         initLoaderHome();
       }
     }],
     views: [{
       namespace: 'home',
       beforeEnter(data) {
-        body.classList.remove('contact-body');
-        document.querySelector('#header').classList.add('scrolled'); 
+        body.classList.remove('contact-body'); 
       }
     }, 
     {
       namespace: 'contact',
       beforeEnter(data) {
         body.classList.add('contact-body');
-        document.querySelector('#header').classList.remove('scrolled');;
       }
     },
     {
       namespace: 'higiya',
       beforeEnter(data) {
         body.classList.remove('contact-body');
-        document.querySelector('#header').classList.add('scrolled');
       }
     },
     {
       namespace: 'smileink',
       beforeEnter(data) {
         body.classList.remove('contact-body');
-        document.querySelector('#header').classList.add('scrolled');
       }
     },
     {
       namespace: 'about',
       beforeEnter(data) {
         body.classList.remove('contact-body');
-        document.querySelector('#header').classList.add('scrolled');
       }
     }]
   });
