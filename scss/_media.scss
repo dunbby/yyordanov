@@ -70,17 +70,19 @@
     display: block !important;
   }
 }
-@media (max-width: $bp-small-2) {
-  header#header .menu ul li {
-    display: none !important;
+
+// ------------- Transparent Background on Mobile -------------- //
+@media (max-width: $bp-small-2), (orientation: landscape) {
+
+  section.home-top {
+    background: url(../assets/img/bg-home-transparent.png) no-repeat;
+    background-size: cover;
+    background-position: 60% 0%;
   }
-  header#header .menu ul li.btn-menu {
-    display: block !important;
-  }
+
   header#header.header-home ul li span {
     color: $black;
   }
-
   header#header.header-home .logo {
     filter: none;
   }
@@ -158,7 +160,7 @@
   }
 
   section.home-top {
-    background-position: 75% 70%;
+    background-position: 75% 100%;
   }
 }
 
@@ -183,12 +185,6 @@
 }
 
 @media (max-width: $bp-small-2) {
-  section.home-top {
-    background: url(../assets/img/bg-home-transparent.png) no-repeat;
-    background-size: cover;
-    background-position: 60% 100%;
-  }
-
   section.home-top .hero-content {
     width: 100%;
   }
