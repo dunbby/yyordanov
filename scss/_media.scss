@@ -10,6 +10,10 @@
   header#header .logo {
     margin-left: 2rem;
   }
+  .btn-hamburger {
+    top: 2rem;
+    right: 2rem;
+  }
   header#header .menu ul li:last-child {
     margin-right: 2rem;
   }
@@ -29,6 +33,10 @@
   header#header .logo {
     margin-left: 2.5rem;
   }
+  .btn-hamburger {
+    top: 2.5rem;
+    right: 2.5rem;
+  }
   header#header .menu ul li:last-child {
     margin-right: 2.5rem;
   }
@@ -47,9 +55,39 @@
       display: none;
   }
 }
+@media (max-width: $bp-xxl) {
+  a.contact-link {
+      display: none;
+  }
+}
+
+// ------------- Menu -------------- //
+@media (max-width: $bp-med) {
+  header#header .menu ul li {
+    display: none !important;
+  }
+  header#header .menu ul li.btn-menu {
+    display: block !important;
+  }
+}
+@media (max-width: $bp-small-2) {
+  header#header .menu ul li {
+    display: none !important;
+  }
+  header#header .menu ul li.btn-menu {
+    display: block !important;
+  }
+  header#header.header-home ul li span {
+    color: $black;
+  }
+
+  header#header.header-home .logo {
+    filter: none;
+  }
+}
 
 // ------------- General Font Sizes -------------- //
-@media (min-width: $bp-med) and (min-height: $bp-small-3) and (max-width: $bp-xxl-2) {
+@media (min-width: $bp-med) and (max-width: $bp-xxl-2), (max-height: $bp-small-3) {
   h1,.h1 {
     &.large {
       font-size: 3.875rem;
@@ -68,7 +106,7 @@
   }
 }
 
-@media (max-width: $bp-med) {
+@media (max-width: $bp-med), (max-height: $bp-small-3){
   h1,.h1 {
     &.large {
       font-size: 2.125rem;
@@ -93,23 +131,68 @@
 }
 
 // ------------- Home Page -------------- //
+@media (max-width: $bp-xxl-2) {
+  section.home-top {
+    background-position: 100% 100%;
+  }
+  section.home-top .hero-content {
+    width: 60%;
+  }
+}
 @media (max-width: $bp-xxl) {
+  section.home-top {
+    background-position: 50% 70%;
+  }
+  section.home-top .hero-content {
+    width: 70%;
+  }
+
   footer .wrapper .row {
     gap: 3rem;
   }
 }
 
+@media (max-width: $bp-large) {
+  section.home-top .hero-content {
+    width: 75%;
+  }
+
+  section.home-top {
+    background-position: 75% 70%;
+  }
+}
+
 @media (max-width: $bp-med-2) { 
+  section.home-top {
+    background-position: 75% 100%;
+    padding-bottom: 5%;
+  }
+  
+  .scroll-to-icon {
+    display: none;
+  }
+
   section.home-portfolio .list {
     grid-template-columns: none;
     grid-template-rows:  repeat(2, 1fr);
   }
+
   footer .wrapper .row {
     gap: 1rem;   
   }
 }
 
 @media (max-width: $bp-small-2) {
+  section.home-top {
+    background: url(../assets/img/bg-home-transparent.png) no-repeat;
+    background-size: cover;
+    background-position: 60% 100%;
+  }
+
+  section.home-top .hero-content {
+    width: 100%;
+  }
+
   section.home-quick-contact .wrapper {
     align-items: flex-start;
   }

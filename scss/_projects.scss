@@ -16,6 +16,7 @@ section.project {
     .row {
       display: flex;
       position: relative;
+      gap: 6rem;
 
       .flex-col{
         width: 33.333%;
@@ -39,15 +40,19 @@ section.project {
           margin-bottom: 2rem;
         }
       }
+      .flex-col.case-col {
+        margin-top: 6rem;
+        width: 100%;
 
-      .flex-col:nth-child(1) {
-        padding-right: 4rem;
-      }
-      .flex-col:nth-child(2) {
-        padding: 0 2rem;
-      }
-      .flex-col:nth-child(3) {
-        padding-left: 4rem;
+        h3 {
+          color: $black;
+        }
+
+        p {
+          color: $grey;
+          font-size: 1.275rem;
+          margin-bottom: 3rem;
+        }
       }
     }
     

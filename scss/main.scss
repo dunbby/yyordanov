@@ -4,6 +4,7 @@
 @import "transitions";
 @import "projects";
 @import "about";
+@import "hamburger";
 
 /* ------------ General styles ------------ */
 
@@ -181,16 +182,13 @@ h1,.h1 {
 
 /*------------ Header ------------*/
 header#header {
-  position: fixed;
+  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   min-width: 320px;
   height: 85px;
-  top: 0;
-  left: 0;
-  z-index: 20; 
   padding-top: 30px;
   padding-bottom: 20px;
   transition: padding 0.4s cubic-bezier(0.3, 0, 0.5, 1);
@@ -213,8 +211,6 @@ header#header {
     &:hover {
       transform: scale(1.05);
     }
-
-   
   }
 
   .menu {
@@ -265,27 +261,53 @@ header#header {
             background-color: $white;
           }
         }
+
+        &.btn-menu {
+          display: none;
+        }
       }
     }
   }
 }
 
-header#header.scrolled {
-  padding-top: 20px;
-  background-color: rgba(252, 252, 252, 0.98);
+header#header.header-home {
+  .logo {
+    filter: invert(96%) sepia(86%) saturate(0%) hue-rotate(249deg) brightness(109%) contrast(98%);
+  }
+  ul {
+    li {
+      a {
+        color: $white;
+      }
+      span {
+        color: white;
+      }
+
+      .cta-btn {
+        color: $black;
+        background-color: $white;
+
+        &:hover {
+          color: $white;
+          border-color: $white;
+          background-color: transparent;
+        }
+      }    
+    }
+  }
 }
 
 /*------------ Home Page ------------*/
-
 section.home{
-
   // Hero Section
   &-top {
-    min-height: calc(100vh - 85px);
+    min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
-    align-content: flex-end;
-    padding-bottom: 5%;
+    align-content: space-between;
+    background: url(../assets/img/bg-home.jpg) no-repeat;
+    background-position: center 70%;
+    background-size: cover;
 
     // margin-top: 50vh;
     .bg-title {
@@ -302,7 +324,6 @@ section.home{
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-      margin-top: 200px;
 
       &-image {
         display: block;
@@ -314,6 +335,7 @@ section.home{
       }
 
       &-content {     
+        width: 50%;
         nav.links {
           display: block;
         }
@@ -593,7 +615,7 @@ section.home{
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 799;
+  z-index: 99;
 
   a {
     transition: .2s all ease;
