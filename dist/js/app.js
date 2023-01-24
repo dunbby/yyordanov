@@ -18,16 +18,6 @@ function initLoaderHome() {
 		top: "0",
 	});	
 
-  if ($(window).width() > 540) { 
-    tl.set("main", {
-      y: "50vh"
-    });
-  } else {
-    tl.set("main", {
-      y: "10vh"
-    });
-  }
-
   tl.set(".loading-words", { 
 		opacity: 0,
     y: -50
@@ -119,14 +109,29 @@ function initLoaderHome() {
 		height: "0vh"
 	});	
 
-  tl.to("main", {
-		duration: 1.5,
-    y: "0vh",
-    stagger: .07,
-		ease: "Expo.easeOut",
-    clearProps: true
-	},"=-.8");
+  const elements = gsap.utils.toArray('main');
+  elements.forEach(element => {
 
+    if ($(window).width() > 540) { 
+      tl.set(element, {
+        y: "50vh",
+      },"=-1");
+    } else {
+      tl.set(element, {
+        y: "20vh"
+      },"=-1");
+    }
+  
+    tl.to(element, {
+      duration: 1,
+      y: "0vh",
+      stagger: .05,
+      ease: "Expo.easeOut",
+      delay: .95,
+      clearProps: "true"
+    },"=-1.7");
+  });
+  
   tl.set("html", { 
 		cursor: "auto"
 	},"=-1.2");
@@ -141,16 +146,6 @@ function initLoader() {
 	tl.set(".loading-screen", { 
 		top: "0",
 	});	
-
-  if ($(window).width() > 540) { 
-    tl.set("main", {
-      y: "50vh"
-    });
-  } else {
-    tl.set("main", {
-      y: "10vh"
-    });
-  }
 
   tl.set(".loading-words", { 
 		opacity: 1,
@@ -197,14 +192,6 @@ function initLoader() {
   tl.set(".loading-screen .rounded-div-wrap.bottom", { 
 		height: "0vh"
 	});	
-
-  tl.to("main .once-in", {
-		duration: 1.5,
-    y: "0vh",
-    stagger: .07,
-		ease: "Expo.easeOut",
-    clearProps: true
-	},"=-.8");
 
   tl.set("html", { 
 		cursor: "auto",
@@ -435,7 +422,7 @@ function initScrollTriggerAnimations() {
           opacity: 0,
           scrollTrigger: {
           trigger: element,
-          start: 'top 90%',
+          start: 'top 95%',
           // markers: true
         }
       })

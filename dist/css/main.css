@@ -987,6 +987,7 @@ main .btn-hamburger.active {
 }
 
 .fixed-nav .nav-row h5 {
+  font-size: 0.7rem;
   margin-bottom: 3em;
 }
 
@@ -1021,6 +1022,9 @@ main .btn-hamburger.active {
   height: calc(clamp(16px, 1.2vw, 19px) / 1.65);
 }
 
+.fixed-nav .social-row .socials h5 {
+  font-size: 0.7rem;
+}
 .fixed-nav .social-row ul {
   display: flex;
   gap: 1rem;
@@ -1207,6 +1211,13 @@ main {
   overflow: hidden;
   width: 100vw;
   height: 100%;
+  position: fixed;
+}
+
+.main-wrap {
+  width: 100vw;
+  will-change: transform;
+  position: fixed;
 }
 
 a {
