@@ -2221,7 +2221,7 @@ header#header.header-home ul li a {
 @media (max-width: 24em) {
   .contact-body #arrow {
     transform: rotate(80deg);
-    top: 35%;
+    top: 32%;
     left: 55%;
     width: 50%;
   }
