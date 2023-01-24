@@ -393,170 +393,110 @@ function initCheckTouchDevice() {
 /* ------------------------ Init Scroll Trigger Animations ------------------------ */
 function initScrollTriggerAnimations() {
 
-  // Disable GSAP on Mobile
-  // Source: https://greensock.com/forums/topic/26325-disabling-scrolltrigger-on-mobile-with-mediamatch/
-  ScrollTrigger.matchMedia({
-    
-    // Desktop Only Scrolltrigger 
-    "(min-width: 721px)": function() {
-
-      if(document.querySelector(".footer-wrap")) {
-        // Scrolltrigger Animation : Footer + hamburger
-        $(".footer-wrap").each(function (index) {
-          let triggerElement = $(this);
-          let targetElementHamburger = $(".btn-hamburger .btn-click");
-      
-          let tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: triggerElement,
-              start: "50% 100%",
-              end: "100% 120%",
-              scrub: 0
-            }
-          });
-          tl.from(targetElementHamburger, {
-            boxShadow: "0px 0px 0px 0px rgb(0, 0, 0)",
-            ease: "none"
-          });
-        });
-      }
-      
-      // Scrolltrigger Animation : Next Page Tile Image Reveal
-      if(document.querySelector(".project-next")) {
-        // Tile Image Anim
-        const tileImages = gsap.utils.toArray('.tile-image-wrap');
-        tileImages.forEach(tileImage => {
-          gsap.set(tileImage, { yPercent: 100, });
-
-          const uncoverTile = gsap.timeline({ paused:true })
-          uncoverTile
-          .to(tileImage, { yPercent: 0, ease: 'none' })
-          
-          ScrollTrigger.create({
-            trigger: tileImage,
-            start: 'top 95%',
-            end: '+=100% 100%',
-            animation: uncoverTile,
-            scrub: .5,
-          });
-        }); 
-      }
-
-      // Scrolltrigger Animation : Reveal Content
-      if(document.querySelector(".animate-in")) {
-        const elements = gsap.utils.toArray('.animate-in');
-        elements.forEach(element => {
-          gsap.from(element, { 
-              y: 50,
-              opacity: 0,
-              scrollTrigger: {
-              trigger: element,
-              start: 'top 95%',
-              // markers: true
-            }
-          })
-        });
-      }
-
-      // Scrolltrigger Animation : Next Page Section Reveal
-      if(document.querySelector(".footer-case-wrap")) {
-        $(".footer-case-wrap").each(function (index) {
-          let triggerElement = $(this);
-          let targetElementRound = $(".footer-rounded-div .rounded-div-wrap");
-        
-          let tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: triggerElement,
-              start: "0% 100%",
-              end: "100% 100%",
-              // markers: true,
-              scrub: 0
-            }
-          });
-          tl.to(targetElementRound, {
-            height: 0,
-            ease: "none"
-          }, 0);
-        });
-      }
-
-      // Scrolltrigger Animation : About Services BG
-      if(document.querySelector(".about-services")) {
-        $(".about-services").each(function (index) {
-          let triggerElement = $(this);
-          let targetElement = $(".about-top, .about-image, .about-services");
-        
-          let tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: triggerElement,
-              start: "-25% 100%",
-              end: "100% 100%",
-              scrub: 0,
-            }
-          });
-          tl.set(targetElement, {
-            backgroundColor: "#FCFCFC",
-          })
-          tl.to(targetElement, {
-            backgroundColor: "#F1F1F1",
-            ease: "none",
-          });
-        });
-      }
-      
-      if(document.querySelector(".about-services")) {
-      // Scrolltrigger Animation : About Services BG
-      $(".about-services").each(function (index) {
-        let triggerElement = $(this);
-        let targetElement = $(".about-header, .line-globe, .about-image, .about-services");
-      
-        let tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: triggerElement,
-            start: "-25% 100%",
-            end: "100% 100%",
-            scrub: 0,
-          }
-        });
-        tl.set(targetElement, {
-          backgroundColor: "#FFFFFF",
-        })
-        tl.to(targetElement, {
-          backgroundColor: "#E9EAEB",
-          ease: "none",
-        });
-      });
-      }
-    
-    }, // End Desktop Only Scrolltrigger
+  if(document.querySelector(".footer-wrap")) {
+    // Scrolltrigger Animation : Footer + hamburger
+    $(".footer-wrap").each(function (index) {
+      let triggerElement = $(this);
+      let targetElementHamburger = $(".btn-hamburger .btn-click");
   
-    // Mobile Only Scrolltrigger
-    "(max-width: 720px)": function() {
-    
-      if(document.querySelector(".footer-wrap")) {
-      // Scrolltrigger Animation : Footer
-      $(".footer-wrap").each(function (index) {
-        let triggerElement = $(this);
-        let targetElementRound = $(".footer-rounded-div .rounded-div-wrap");
-      
-        let tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: triggerElement,
-            start: "0% 100%",
-            end: "100% 100%",
-            scrub: 0
-          }
-        });
-        tl.to(targetElementRound, {
-          height: 0,
-          ease: "none"
-        }, 0);
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: triggerElement,
+          start: "50% 100%",
+          end: "100% 120%",
+          scrub: 0
+        }
       });
+      tl.from(targetElementHamburger, {
+        boxShadow: "0px 0px 0px 0px rgb(0, 0, 0)",
+        ease: "none"
+      });
+    });
     }
+
     
-    } // End Mobile Only Scrolltrigger
-  
-  }); // End GSAP Matchmedia
+  // Scrolltrigger Animation : About Services BG
+  if(document.querySelector(".about-services")) {
+    $(".about-services").each(function (index) {
+      let triggerElement = $(this);
+      let targetElement = $(".about-top, .about-image, .about-services");
+    
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: triggerElement,
+          start: "-25% 100%",
+          end: "100% 100%",
+          scrub: 0,
+        }
+      });
+      tl.set(targetElement, {
+        backgroundColor: "#FCFCFC",
+      })
+      tl.to(targetElement, {
+        backgroundColor: "#F1F1F1",
+        ease: "none",
+      });
+    });
+  }
+
+  // Scrolltrigger Animation : Reveal Content
+  if(document.querySelector(".animate-in")) {
+    const elements = gsap.utils.toArray('.animate-in');
+    elements.forEach(element => {
+      gsap.from(element, { 
+          y: 50,
+          opacity: 0,
+          scrollTrigger: {
+          trigger: element,
+          start: 'top 95%',
+          // markers: true
+        }
+      })
+    });
+  }
+
+  // Scrolltrigger Animation : Next Page Section Reveal
+  if(document.querySelector(".footer-case-wrap")) {
+    $(".footer-case-wrap").each(function (index) {
+      let triggerElement = $(this);
+      let targetElementRound = $(".footer-rounded-div .rounded-div-wrap");
+    
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: triggerElement,
+          start: "0% 100%",
+          end: "100% 100%",
+          // markers: true,
+          scrub: 0
+        }
+      });
+      tl.to(targetElementRound, {
+        height: 0,
+        ease: "none"
+      }, 0);
+    });
+  }
+
+  // Scrolltrigger Animation : Next Page Tile Image Reveal
+  if(document.querySelector(".project-next")) {
+    // Tile Image Anim
+    const tileImages = gsap.utils.toArray('.tile-image-wrap');
+    tileImages.forEach(tileImage => {
+      gsap.set(tileImage, { yPercent: 100, });
+
+      const uncoverTile = gsap.timeline({ paused:true })
+      uncoverTile
+      .to(tileImage, { yPercent: 0, ease: 'none' })
+      
+      ScrollTrigger.create({
+        trigger: tileImage,
+        start: 'top 95%',
+        end: '+=100% 100%',
+        animation: uncoverTile,
+        scrub: .5,
+      });
+    }); 
+  }
 }
 
 /* ------------------------ Init Lazy Load ------------------------ */
