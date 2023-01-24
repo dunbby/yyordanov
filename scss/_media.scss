@@ -228,15 +228,8 @@
 
     padding-bottom: 10px;
       & > div .logo img {
-        height: 30px;
-        min-width: 30px;
-        padding-right: 1rem;
+        display: none;
       }
-
-    p.small {
-      font-size: .6rem;
-      line-height: .8rem;
-    }
   }
 }
 
