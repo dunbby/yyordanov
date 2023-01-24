@@ -2023,6 +2023,9 @@ header#header.header-home ul li a {
   }
 }
 @media (max-width: 29.75em) {
+  section.home-top {
+    padding-bottom: 20%;
+  }
   section.home-top .hero-content {
     width: 100%;
   }
@@ -2112,6 +2115,9 @@ header#header.header-home ul li a {
   }
   section.project-photos.bg-dark .single-image img {
     width: 150% !important;
+  }
+  section.project-photos .single-image .overlay-image-top.pencil {
+    width: 30% !important;
   }
   section.project-services {
     padding-bottom: 4.375rem;
