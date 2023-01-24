@@ -38,8 +38,8 @@
 }
 .contact-body #arrow {
   position: absolute;
-  top: 20%;
-  left: 42%;
+  top: 10%;
+  left: 40%;
   z-index: 5;
 }
 .contact-body::after {
@@ -139,7 +139,6 @@ section.contacts {
   height: auto;
   min-height: 45px;
   resize: none;
-  overflow-y: hidden;
   overflow-x: hidden;
   max-height: 160px;
 }
@@ -260,6 +259,43 @@ section.contacts {
   display: flex;
   flex-direction: column;
   grid-area: message;
+}
+
+.message {
+  position: relative;
+}
+
+.name {
+  position: relative;
+}
+
+.email {
+  position: relative;
+}
+
+form input[type=email]:focus + .input-bottom-line,
+form input[type=number]:focus + .input-bottom-line,
+form input[type=password]:focus + .input-bottom-line,
+form input[type=tel]:focus + .input-bottom-line,
+form input[type=text]:focus + .input-bottom-line,
+form textarea:focus + .input-bottom-line {
+  width: 100%;
+}
+
+form input[type=email] + .input-bottom-line,
+form input[type=number] + .input-bottom-line,
+form input[type=password] + .input-bottom-line,
+form input[type=tel] + .input-bottom-line,
+form input[type=text] + .input-bottom-line,
+form textarea + .input-bottom-line {
+  display: block;
+  height: 1px;
+  width: 0;
+  position: absolute;
+  background: #0F141E;
+  bottom: 0;
+  left: 0;
+  transition: 0.25s;
 }
 
 .no-scroll-overlay {
@@ -462,7 +498,7 @@ section.project-top {
   padding-bottom: 8.75rem;
 }
 section.project-top .wrapper .heading {
-  padding: 300px 0 100px 0;
+  padding: 15% 0 7.5% 0;
 }
 section.project-services {
   margin-bottom: 0;
@@ -532,10 +568,10 @@ section.project-photos .single-image .mobile-devices {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10rem;
 }
 section.project-photos .single-image .mobile-devices img {
   width: 15%;
-  margin: 0 5rem;
 }
 section.project-photos .single-image .playpauze video {
   width: 100%;
@@ -1275,7 +1311,7 @@ h2, .h2 {
   padding-bottom: 3px;
 }
 h2.large, .h2.large {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.3rem, 5vw, 4rem);
   line-height: 4.6875rem;
 }
 
@@ -1883,6 +1919,12 @@ footer .wrapper .copyright > div .small .icon-heart img {
     display: block !important;
   }
 }
+@media (max-width: 46.8em) {
+  .loading-container .loading-words h2 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+}
 @media screen and (orientation: landscape) and (max-device-height: 29.75em), (max-width: 29.75em) {
   section.home-top {
     background: url(../assets/img/bg-home-transparent.png) no-repeat;
@@ -1921,8 +1963,8 @@ header#header.header-home ul li a {
     line-height: 2.5rem;
   }
   h1.extra-large, .h1.extra-large {
-    font-size: 4.875rem;
-    line-height: 5.0625rem;
+    font-size: 3.375rem;
+    line-height: 3.4625rem;
   }
   section.home-quick-contact img {
     width: 32px;
@@ -1962,6 +2004,9 @@ header#header.header-home ul li a {
   }
 }
 @media (max-width: 48em) {
+  section {
+    margin-bottom: 5rem;
+  }
   section.home-top {
     background-position: 75% 100%;
     padding-bottom: 5%;
@@ -2021,22 +2066,163 @@ header#header.header-home ul li a {
   }
 }
 @media (max-width: 46.8em) {
+  section.about-top {
+    padding-bottom: 4.375rem;
+  }
+  section.about-services {
+    padding-top: 4.375rem;
+    padding-bottom: 4.375rem;
+  }
   section.about-services .row {
     flex-direction: column;
+  }
+}
+@media (max-width: 92.5em) {
+  section.project-photos .single-image .overlay-image-top {
+    width: 50%;
+  }
+  section.project-photos .single-image .mobile-devices {
+    gap: 7.5rem;
+  }
+  section.project-photos .single-image .mobile-devices img {
+    width: 20%;
   }
 }
 @media (max-width: 60em) {
   section.project-next .tile-image-wrap {
     width: 40vw;
   }
+  section.project-photos .single-image .overlay-image-top {
+    width: 75%;
+  }
+  section.project-photos .single-image .mobile-devices {
+    gap: 5rem;
+  }
+  section.project-photos .single-image .mobile-devices img {
+    width: 25%;
+  }
 }
 @media (max-width: 46.8em) {
+  section.project-top {
+    padding-bottom: 4.375rem;
+  }
+  section.project-photos .single-image .mobile-devices {
+    gap: 3rem;
+  }
+  section.project-photos .single-image .mobile-devices img {
+    width: 25%;
+  }
+  section.project-photos .single-image .overlay-image-top.pencil-small {
+    top: 50%;
+    left: 60%;
+  }
+  section.project-photos.bg-dark .single-image img {
+    width: 150% !important;
+  }
+  section.project-services {
+    padding-bottom: 4.375rem;
+  }
+  section.project-services .row:first-child {
+    flex-direction: column;
+  }
+  section.project-services .row:first-child .flex-col {
+    width: 100%;
+  }
+  section.project-services .row:first-child .flex-col h5 {
+    padding-bottom: 0;
+  }
+  section.project-services .row:first-child .flex-col .stripe {
+    margin-bottom: 1rem;
+  }
+  section.project-photos {
+    padding: 4.375rem 0;
+  }
   section.project-next .tile-image-wrap {
     width: 50vw;
   }
 }
 @media (max-width: 39.8em) {
+  section.project-photos .single-image .mobile-devices {
+    gap: 1rem;
+  }
+  section.project-photos .single-image .mobile-devices img {
+    width: 25%;
+  }
+}
+@media (max-width: 39.8em) {
   section.project-next .tile-image-wrap {
     width: 70vw;
+  }
+}
+@media (max-height: 67em) {
+  .contact-body #arrow {
+    top: 5%;
+  }
+}
+@media (min-width: 54.5em) and (max-width: 92.5em) and (min-height: 46.8em) {
+  .contacts-wrapper .right-side .contact-form {
+    grid-template-areas: "name name" "email email" "service service" "budget budget" "message message";
+    grid-gap: 1rem;
+  }
+  .contact-body #arrow {
+    width: 20%;
+    left: 34%;
+    top: 5%;
+  }
+}
+@media (max-width: 54.5em), (max-height: 46.8em) {
+  .contact-body {
+    height: auto;
+    background: #FCFCFC;
+  }
+  .contact-body::after {
+    display: none;
+  }
+  .contact-body #arrow {
+    transform: rotate(45deg);
+    top: 25%;
+    left: 55%;
+  }
+  .contacts-wrapper {
+    flex-direction: column;
+    height: auto;
+    align-items: flex-start;
+  }
+  .contacts-wrapper .right-side,
+.contacts-wrapper .left-side {
+    width: 100%;
+    padding-top: 4.35rem;
+  }
+  .contacts-wrapper .right-side {
+    padding-left: 0;
+    padding-bottom: 4.35rem;
+  }
+  .contacts-wrapper .right-side .contact-form {
+    grid-template-areas: "name email" "service budget" "message message";
+    grid-gap: 1rem;
+  }
+}
+@media (max-width: 39.8em) {
+  .contact-body #arrow {
+    transform: rotate(80deg);
+    top: 30%;
+    left: 50%;
+    width: 40%;
+  }
+  .contacts-wrapper .left-side h1 {
+    font-size: 2.125rem;
+    line-height: 2.5rem;
+  }
+  .contacts-wrapper .right-side .contact-form {
+    grid-template-areas: "name name" "email email" "service service" "budget budget" "message message";
+    grid-gap: 1rem;
+  }
+}
+@media (max-width: 24em) {
+  .contact-body #arrow {
+    transform: rotate(80deg);
+    top: 35%;
+    left: 55%;
+    width: 50%;
   }
 }

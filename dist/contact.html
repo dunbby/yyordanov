@@ -105,16 +105,16 @@
               </a>
             </li>
             <li class="btn btn-link">
-              <a href="index.html" class="btn-click projects-link">
+              <a href="about.html" class="btn-click ">
                 <span class="btn-text">
-                  <span class="btn-text-inner">Projects</span>
+                  <span class="btn-text-inner">About</span>
                 </span>
               </a>
             </li>
             <li class="btn btn-link">
-              <a href="about.html" class="btn-click ">
+              <a href="index.html" class="btn-click projects-link">
                 <span class="btn-text">
-                  <span class="btn-text-inner">About</span>
+                  <span class="btn-text-inner">Projects</span>
                 </span>
               </a>
             </li>
@@ -245,17 +245,19 @@
               <div class="name">
                 <label for="name">Your Name</label>
                 <input type="text" name="name" id="name" placeholder="What's your name?" autocomplete="off">
+                <span class="input-bottom-line"></span>
               </div>
 
               <div class="email">
                 <label for="email">Your Email</label>
                 <input type="email" name="email" id="email" placeholder="What's your email?" autocomplete="off">
+                <span class="input-bottom-line"></span>
               </div>
 
               <div class="service">
                 <label for="service">Service</label>
                 <select name="service" id="service">
-                  <option value="0">What are you interested in?</option>
+                  <option value="0" disabled selected>What are you interested in?</option>
                   <option value="1">Test 1</option>
                   <option value="2">test 2</option>
                   <option value="3">test 3</option>
@@ -265,7 +267,7 @@
               <div class="budget">
                 <label for="budget">Budget</label>
                 <select name="budget" id="budget">
-                  <option value="0">What is your budget?</option>
+                  <option value="0" disabled selected>What is your budget?</option>
                   <option value="1">Test 1</option>
                   <option value="2">test 2</option>
                   <option value="3">test 3</option>
@@ -274,7 +276,8 @@
 
               <div class="message">
                 <label for="message">Message</label>
-                <textarea name="message" placeholder="What’s your message?" rows="1" required></textarea>
+                <textarea id="expandingTextArea" name="message" placeholder="What’s your message?" rows="3" required></textarea>
+                <span class="input-bottom-line"></span>
               </div>
                   
               <div>
@@ -311,6 +314,9 @@
                 Made with <span class="icon icon-heart"><img src="./assets/img/heart-icon.svg"></span> in Bulgaria.
               </p>
             </div>
+            <a href="https://www.netlify.com" target="_blank">
+              <p class="small">Deploys by Netlify</p>    
+            </a>
           </div>
         </div>
       </footer> <!-- footer -->
@@ -336,10 +342,6 @@
 
   <!-- Main JS File -->
   <script src="./js/app.js"></script>
-  <script src='./js/autosize.js'></script>
-	<script>
-		autosize(document.querySelectorAll('textarea'));
-	</script>
 
 </body>
 </html>

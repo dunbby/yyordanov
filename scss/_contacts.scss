@@ -4,8 +4,8 @@
   background: linear-gradient(90deg, #F1F1F1 50%, $white 50%);
   #arrow {
     position: absolute;
-    top: 20%;
-    left: 42%;
+    top: 10%;
+    left: 40%;
     z-index: 5;
   }
 
@@ -112,7 +112,7 @@ section.contacts {
         height: auto;
         min-height: 45px;
         resize: none;
-        overflow-y: hidden;
+        // overflow-y: hidden;
         overflow-x: hidden;
         max-height: 160px;
       }
@@ -246,4 +246,37 @@ section.contacts {
       }
     }
   }
+}
+
+.message {
+  position: relative;
+}
+.name {
+  position: relative;
+}
+.email {
+  position: relative;
+}
+form input[type="email"]:focus + .input-bottom-line,
+form input[type="number"]:focus + .input-bottom-line,
+form input[type="password"]:focus + .input-bottom-line,
+form input[type="tel"]:focus + .input-bottom-line,
+form input[type="text"]:focus + .input-bottom-line,
+form textarea:focus + .input-bottom-line {
+  width: 100%;
+}
+form input[type="email"] + .input-bottom-line,
+form input[type="number"] + .input-bottom-line,
+form input[type="password"] + .input-bottom-line,
+form input[type="tel"] + .input-bottom-line,
+form input[type="text"] + .input-bottom-line,
+form textarea + .input-bottom-line {
+  display: block;
+  height: 1px;
+  width: 0;
+  position: absolute;
+  background: $black;
+  bottom: 0;
+  left: 0;
+  transition: 0.25s;
 }

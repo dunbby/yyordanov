@@ -4,7 +4,7 @@ section.project {
     padding-bottom: 8.75rem;
     .wrapper {
       .heading {
-        padding: 300px 0 100px 0;
+        padding: 15% 0 7.5% 0;
       }
     }
   }
@@ -89,10 +89,10 @@ section.project {
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 10rem;
 
         img {
           width: 15%;
-          margin: 0 5rem;
         }
       }
 

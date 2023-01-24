@@ -1,4 +1,4 @@
-// ------------- Wrapper & Static Content on the outsid -------------- //
+// ------------- Wrapper & Static Content on the outside -------------- //
 @media (min-width: $bp-med) and (min-height: $bp-small-3) {
   .wrapper {
       padding: 0 2rem;
@@ -71,6 +71,15 @@
   }
 }
 
+// ------------- Page Transition -------------- //
+@media (max-width: $bp-med) {
+  .loading-container .loading-words h2 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+}
+
+
 // ------------- Transparent Background on Mobile -------------- //
 @media screen and (orientation:landscape) and (max-device-height: $bp-small-2), (max-width: $bp-small-2) {
   section.home-top {
@@ -119,8 +128,8 @@
       line-height: 2.5rem;
     }
     &.extra-large {
-      font-size: 4.875rem;
-      line-height: 5.0625rem;
+      font-size: 3.375rem;
+      line-height: 3.4625rem;
     }
   }
   // Arrow  
@@ -137,7 +146,7 @@
 }
 
 // ------------- Home Page -------------- //
-@media (max-width: $bp-xxl-2) {
+@media (max-width: $bp-xxl-2) { 
   section.home-top {
     background-position: 100% 100%;
   }
@@ -169,6 +178,10 @@
 }
 
 @media (max-width: $bp-med-2) { 
+  section {
+    margin-bottom: 5rem;
+  }
+  
   section.home-top {
     background-position: 75% 100%;
     padding-bottom: 5%;
@@ -243,27 +256,219 @@
 }
 
 @media (max-width: $bp-med) {
-  section.about-services .row {
-    flex-direction: column;
+  section.about-top {
+    padding-bottom: 4.375rem;
+  }
+  section.about-services {
+    padding-top: 4.375rem;
+    padding-bottom: 4.375rem;
+    .row {
+      flex-direction: column;
+    }
   }
 }
 
 // ------------- Projects Pages -------------- //
 
+@media (max-width: $bp-xxl-2) {
+  section.project-photos .single-image .overlay-image-top {
+    width: 50%;
+  }
+  section.project-photos .single-image .mobile-devices {
+    gap: 7.5rem;
+
+    img {
+      width: 20%;
+    }
+  }
+}
+
 @media (max-width: $bp-xl) {
   section.project-next .tile-image-wrap {
     width: 40vw;
   }
+
+  section.project-photos .single-image .overlay-image-top {
+    width: 75%;
+  }
+  section.project-photos .single-image .mobile-devices {
+    gap: 5rem;
+
+    img {
+      width: 25%;
+    }
+  }
+
 }
 
 @media (max-width: $bp-med) {
+  section.project-top {
+    padding-bottom: 4.375rem;
+  }
+
+  section.project-photos .single-image .mobile-devices {
+    gap: 3rem;
+
+    img {
+      width: 25%;
+    }
+  }
+
+  section.project-photos .single-image .overlay-image-top.pencil-small {
+    top: 50%;
+    left: 60%;
+  }
+
+  section.project-photos.bg-dark .single-image img {
+    width: 150% !important;
+  }
+
+  section.project-services {
+    padding-bottom: 4.375rem;
+
+    .row:first-child {
+      flex-direction: column;
+      .flex-col{
+        width: 100%;
+
+        h5 {
+          padding-bottom: 0;
+        }
+
+        .stripe {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  section.project-photos {
+    padding: 4.375rem 0;
+  }
+
   section.project-next .tile-image-wrap {
     width: 50vw;
   }
 }
 
 @media (max-width: $bp-small-3) {
+  section.project-photos .single-image .mobile-devices {
+    gap: 1rem;
+
+    img {
+      width: 25%;
+    }
+  }
+}
+@media (max-width: $bp-small-3) {
   section.project-next .tile-image-wrap {
     width: 70vw;
   }
+}
+
+// ------------- Contact Pages -------------- //
+
+
+// Arrow media queries
+@media (max-height: $bp-xl-2) {
+  .contact-body #arrow {
+    top: 5%;
+  }
+}
+
+@media (min-width: $bp-large-2) and (max-width: $bp-xxl-2) and (min-height: $bp-med) {
+  .contacts-wrapper .right-side .contact-form {
+    grid-template-areas:
+      "name name"
+      "email email"
+      "service service"
+      "budget budget"
+      "message message";
+    grid-gap: 1rem;
+  }
+
+  .contact-body #arrow {
+    width: 20%;
+    left: 34%;
+    top: 5%;
+  }
+}
+
+@media (max-width: $bp-large-2), (max-height: $bp-med) {
+  .contact-body {
+    height: auto;
+    background: $white;
+
+    &::after {
+      display: none;
+    } 
+
+    #arrow {
+      transform: rotate(45deg);
+      top: 25%;
+      left: 55%;
+    }
+  }
+
+  .contacts-wrapper {
+    flex-direction: column;
+    height: auto;
+    align-items: flex-start;
+    
+    .right-side,
+    .left-side {
+      width: 100%;
+      padding-top: 4.350rem;
+    }
+
+    .right-side {
+      padding-left: 0;
+      padding-bottom: 4.350rem;
+    }
+
+    .right-side .contact-form {
+      
+      grid-template-areas:
+      "name email"
+      "service budget"
+      "message message";
+      grid-gap: 1rem;
+    }
+  }
+}
+
+@media (max-width: $bp-small-3) {
+  .contact-body #arrow {
+      transform: rotate(80deg);
+      top: 30%;
+      left: 50%;
+      width: 40%;
+  }
+
+  .contacts-wrapper {
+    .left-side h1 {
+      font-size: 2.125rem;
+      line-height: 2.5rem;
+    }
+
+    .right-side .contact-form {
+      
+      grid-template-areas:
+      "name name"
+      "email email"
+      "service service"
+      "budget budget"
+      "message message";
+      grid-gap: 1rem;
+    }
+  }
+}
+
+@media (max-width: $bp-small) {
+  .contact-body #arrow {
+    transform: rotate(80deg);
+    top: 35%;
+    left: 55%;
+    width: 50%;
+}
 }
