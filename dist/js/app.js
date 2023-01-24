@@ -415,29 +415,7 @@ function initScrollTriggerAnimations() {
     }
 
     
-  // Scrolltrigger Animation : About Services BG
-  if(document.querySelector(".about-services")) {
-    $(".about-services").each(function (index) {
-      let triggerElement = $(this);
-      let targetElement = $(".about-top, .about-image, .about-services");
-    
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: triggerElement,
-          start: "-25% 100%",
-          end: "100% 100%",
-          scrub: 0,
-        }
-      });
-      tl.set(targetElement, {
-        backgroundColor: "#FCFCFC",
-      })
-      tl.to(targetElement, {
-        backgroundColor: "#F1F1F1",
-        ease: "none",
-      });
-    });
-  }
+  
 
   // Scrolltrigger Animation : Reveal Content
   if(document.querySelector(".animate-in")) {
@@ -455,27 +433,7 @@ function initScrollTriggerAnimations() {
     });
   }
 
-  // Scrolltrigger Animation : Next Page Section Reveal
-  if(document.querySelector(".footer-case-wrap")) {
-    $(".footer-case-wrap").each(function (index) {
-      let triggerElement = $(this);
-      let targetElementRound = $(".footer-rounded-div .rounded-div-wrap");
-    
-      let tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: triggerElement,
-          start: "0% 100%",
-          end: "100% 100%",
-          // markers: true,
-          scrub: 0
-        }
-      });
-      tl.to(targetElementRound, {
-        height: 0,
-        ease: "none"
-      }, 0);
-    });
-  }
+  
 
   // Scrolltrigger Animation : Next Page Tile Image Reveal
   if(document.querySelector(".project-next")) {
@@ -497,6 +455,113 @@ function initScrollTriggerAnimations() {
       });
     }); 
   }
+
+  // Disable GSAP on Mobile
+  // Source: https://greensock.com/forums/topic/26325-disabling-scrolltrigger-on-mobile-with-mediamatch/
+  ScrollTrigger.matchMedia({
+    
+    // Desktop Only Scrolltrigger 
+    "(min-width: 721px)": function() {
+
+      // Scrolltrigger Animation : Next Page Section Reveal
+      if(document.querySelector(".footer-case-wrap")) {
+        $(".footer-case-wrap").each(function (index) {
+          let triggerElement = $(this);
+          let targetElementRound = $(".footer-rounded-div .rounded-div-wrap");
+        
+          let tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: triggerElement,
+              start: "0% 100%",
+              end: "100% 100%",
+              // markers: true,
+              scrub: 0
+            }
+          });
+          tl.to(targetElementRound, {
+            height: 0,
+            ease: "none"
+          }, 0);
+        });
+      }
+
+      // Scrolltrigger Animation : About Services BG
+      if(document.querySelector(".about-services")) {
+        $(".about-services").each(function (index) {
+          let triggerElement = $(this);
+          let targetElement = $(".about-top, .about-image, .about-services");
+        
+          let tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: triggerElement,
+              start: "-25% 100%",
+              end: "100% 100%",
+              scrub: 0,
+            }
+          });
+          tl.set(targetElement, {
+            backgroundColor: "#FCFCFC",
+          })
+          tl.to(targetElement, {
+            backgroundColor: "#F1F1F1",
+            ease: "none",
+          });
+        });
+      }
+      
+      if(document.querySelector(".about-services")) {
+      // Scrolltrigger Animation : About Services BG
+      $(".about-services").each(function (index) {
+        let triggerElement = $(this);
+        let targetElement = $(".about-header, .line-globe, .about-image, .about-services");
+      
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: triggerElement,
+            start: "-25% 100%",
+            end: "100% 100%",
+            scrub: 0,
+          }
+        });
+        tl.set(targetElement, {
+          backgroundColor: "#FFFFFF",
+        })
+        tl.to(targetElement, {
+          backgroundColor: "#E9EAEB",
+          ease: "none",
+        });
+      });
+      }
+    
+    }, // End Desktop Only Scrolltrigger
+  
+    // Mobile Only Scrolltrigger
+    "(max-width: 720px)": function() {
+    
+      if(document.querySelector(".footer-wrap")) {
+      // Scrolltrigger Animation : Footer
+      $(".footer-wrap").each(function (index) {
+        let triggerElement = $(this);
+        let targetElementRound = $(".footer-rounded-div .rounded-div-wrap");
+      
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: triggerElement,
+            start: "0% 100%",
+            end: "100% 100%",
+            scrub: 0
+          }
+        });
+        tl.to(targetElementRound, {
+          height: 0,
+          ease: "none"
+        }, 0);
+      });
+    }
+    
+    } // End Mobile Only Scrolltrigger
+  
+  }); // End GSAP Matchmedia
 }
 
 /* ------------------------ Init Lazy Load ------------------------ */
@@ -598,10 +663,10 @@ function initScript() {
 /* ------------------------ Init Page Transitions ------------------------ */
 function initPageTransitions() {
 
-  // // scroll to the top of the page
-  // barba.hooks.enter(() => {
-  //   window.scrollTo(0, 0);
-  // });
+  // scroll to the top of the page
+  barba.hooks.enter(() => {
+    window.scrollTo(0, 0);
+  });
 
   if ($(window).width() > 540) { 
     barba.hooks.leave(() => {
