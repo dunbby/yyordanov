@@ -2044,13 +2044,7 @@ header#header.header-home ul li a {
     padding-bottom: 10px;
   }
   footer .wrapper .copyright > div .logo img {
-    height: 30px;
-    min-width: 30px;
-    padding-right: 1rem;
-  }
-  footer .wrapper .copyright p.small {
-    font-size: 0.6rem;
-    line-height: 0.8rem;
+    display: none;
   }
 }
 @media (max-width: 54.5em) {
