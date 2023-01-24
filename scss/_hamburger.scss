@@ -194,6 +194,7 @@ main .btn-hamburger.active {
 }
 
 .fixed-nav .nav-row h5 {
+  font-size: .7rem;
   margin-bottom: 3em;
 }
 
@@ -229,6 +230,11 @@ main .btn-hamburger.active {
 }
 
 .fixed-nav .social-row {
+  .socials {
+    h5 {
+      font-size: .7rem;
+    }
+  }
   ul {
     display: flex;
     gap: 1rem;

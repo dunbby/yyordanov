@@ -109,6 +109,29 @@ function initLoaderHome() {
 		height: "0vh"
 	});	
 
+  const elements = gsap.utils.toArray('main');
+  elements.forEach(element => {
+
+    if ($(window).width() > 540) { 
+      tl.set(element, {
+        y: "50vh",
+      },"=-1");
+    } else {
+      tl.set(element, {
+        y: "20vh"
+      },"=-1");
+    }
+  
+    tl.to(element, {
+      duration: 1,
+      y: "0vh",
+      stagger: .05,
+      ease: "Expo.easeOut",
+      delay: .95,
+      clearProps: "true"
+    },"=-1.7");
+  });
+  
   tl.set("html", { 
 		cursor: "auto"
 	},"=-1.2");
@@ -123,7 +146,6 @@ function initLoader() {
 	tl.set(".loading-screen", { 
 		top: "0",
 	});	
-
 
   tl.set(".loading-words", { 
 		opacity: 1,
@@ -400,7 +422,7 @@ function initScrollTriggerAnimations() {
           opacity: 0,
           scrollTrigger: {
           trigger: element,
-          start: 'top 90%',
+          start: 'top 95%',
           // markers: true
         }
       })

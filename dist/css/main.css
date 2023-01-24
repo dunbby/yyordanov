@@ -987,6 +987,7 @@ main .btn-hamburger.active {
 }
 
 .fixed-nav .nav-row h5 {
+  font-size: 0.7rem;
   margin-bottom: 3em;
 }
 
@@ -1021,6 +1022,9 @@ main .btn-hamburger.active {
   height: calc(clamp(16px, 1.2vw, 19px) / 1.65);
 }
 
+.fixed-nav .social-row .socials h5 {
+  font-size: 0.7rem;
+}
 .fixed-nav .social-row ul {
   display: flex;
   gap: 1rem;
@@ -1207,6 +1211,13 @@ main {
   overflow: hidden;
   width: 100vw;
   height: 100%;
+  position: fixed;
+}
+
+.main-wrap {
+  width: 100vw;
+  will-change: transform;
+  position: fixed;
 }
 
 a {
@@ -2023,6 +2034,9 @@ header#header.header-home ul li a {
   }
 }
 @media (max-width: 29.75em) {
+  section.home-top {
+    padding-bottom: 20%;
+  }
   section.home-top .hero-content {
     width: 100%;
   }
@@ -2112,6 +2126,9 @@ header#header.header-home ul li a {
   }
   section.project-photos.bg-dark .single-image img {
     width: 150% !important;
+  }
+  section.project-photos .single-image .overlay-image-top.pencil {
+    width: 30% !important;
   }
   section.project-services {
     padding-bottom: 4.375rem;

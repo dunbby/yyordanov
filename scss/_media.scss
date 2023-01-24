@@ -202,6 +202,9 @@
 }
 
 @media (max-width: $bp-small-2) {
+  section.home-top {
+    padding-bottom: 20%;
+  }
   section.home-top .hero-content {
     width: 100%;
   }
@@ -314,6 +317,10 @@
 
   section.project-photos.bg-dark .single-image img {
     width: 150% !important;
+  }
+
+  section.project-photos .single-image .overlay-image-top.pencil {
+    width: 30% !important;
   }
 
   section.project-services {
