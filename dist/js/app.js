@@ -598,10 +598,10 @@ function initScript() {
 /* ------------------------ Init Page Transitions ------------------------ */
 function initPageTransitions() {
 
-  // scroll to the top of the page
-  barba.hooks.enter(() => {
-    window.scrollTo(0, 0);
-  });
+  // // scroll to the top of the page
+  // barba.hooks.enter(() => {
+  //   window.scrollTo(0, 0);
+  // });
 
   if ($(window).width() > 540) { 
     barba.hooks.leave(() => {
