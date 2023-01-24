@@ -364,6 +364,32 @@ function initScrolltriggerNav() {
   });
 }
 
+/* ------------------------ Init Check Touch Device ------------------------ */
+function initCheckTouchDevice() {
+    
+  function isTouchScreendevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints;      
+  };
+  
+  if(isTouchScreendevice()){
+    $('main').addClass('touch');
+    $('main').removeClass('no-touch');
+  } else {
+    $('main').removeClass('touch');
+    $('main').addClass('no-touch');
+  }
+  $(window).resize(function() {
+    if(isTouchScreendevice()){
+       $('main').addClass('touch');
+       $('main').removeClass('no-touch');
+    } else {
+       $('main').removeClass('touch');
+       $('main').addClass('no-touch');
+    }
+  });
+
+}
+
 /* ------------------------ Init Scroll Trigger Animations ------------------------ */
 function initScrollTriggerAnimations() {
 
@@ -566,6 +592,7 @@ function initScript() {
   initLazyLoad();
   initPlayVideoInview();
   initScrollTriggerAnimations();
+  initCheckTouchDevice();
 }
 
 /* ------------------------ Init Page Transitions ------------------------ */
