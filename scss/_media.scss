@@ -393,7 +393,8 @@
       "email email"
       "service service"
       "budget budget"
-      "message message";
+      "message message"
+      "recaptcha recaptcha";
     grid-gap: 1rem;
   }
 
@@ -441,7 +442,8 @@
       grid-template-areas:
       "name email"
       "service budget"
-      "message message";
+      "message message"
+      "recaptcha recaptcha";
       grid-gap: 1rem;
     }
   }
@@ -468,7 +470,8 @@
       "email email"
       "service service"
       "budget budget"
-      "message message";
+      "message message"
+      "recaptcha recaptcha";
       grid-gap: 1rem;
     }
   }

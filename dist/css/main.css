@@ -228,7 +228,7 @@ section.contacts {
 }
 .contacts-wrapper .right-side .contact-form {
   display: grid;
-  grid-template-areas: "name email" "service budget" "message message";
+  grid-template-areas: "name email" "service budget" "message message" "recaptcha recaptcha";
   grid-gap: 2rem;
 }
 .contacts-wrapper .right-side .contact-form label {
@@ -259,6 +259,9 @@ section.contacts {
   display: flex;
   flex-direction: column;
   grid-area: message;
+}
+.contacts-wrapper .right-side .contact-form .recaptcha {
+  grid-area: recaptcha;
 }
 
 .message {
@@ -2187,7 +2190,7 @@ header#header.header-home ul li a {
 }
 @media (min-width: 54.5em) and (max-width: 92.5em) and (min-height: 46.8em) {
   .contacts-wrapper .right-side .contact-form {
-    grid-template-areas: "name name" "email email" "service service" "budget budget" "message message";
+    grid-template-areas: "name name" "email email" "service service" "budget budget" "message message" "recaptcha recaptcha";
     grid-gap: 1rem;
   }
   .contact-body #arrow {
@@ -2224,7 +2227,7 @@ header#header.header-home ul li a {
     padding-bottom: 4.35rem;
   }
   .contacts-wrapper .right-side .contact-form {
-    grid-template-areas: "name email" "service budget" "message message";
+    grid-template-areas: "name email" "service budget" "message message" "recaptcha recaptcha";
     grid-gap: 1rem;
   }
 }
@@ -2240,7 +2243,7 @@ header#header.header-home ul li a {
     line-height: 2.5rem;
   }
   .contacts-wrapper .right-side .contact-form {
-    grid-template-areas: "name name" "email email" "service service" "budget budget" "message message";
+    grid-template-areas: "name name" "email email" "service service" "budget budget" "message message" "recaptcha recaptcha";
     grid-gap: 1rem;
   }
 }

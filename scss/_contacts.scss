@@ -212,7 +212,8 @@ section.contacts {
       grid-template-areas:
       "name email"
       "service budget"
-      "message message";
+      "message message"
+      "recaptcha recaptcha";
       grid-gap: 2rem;
 
       label {
@@ -243,6 +244,9 @@ section.contacts {
         display: flex;
         flex-direction: column;
         grid-area: message;
+      }
+      .recaptcha {
+        grid-area: recaptcha;
       }
     }
   }
