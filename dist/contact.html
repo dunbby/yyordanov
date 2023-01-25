@@ -241,7 +241,7 @@
           </div><!-- .left-side -->
           
           <div class="right-side">
-            <form class="contact-form">
+            <form class="contact-form" data-netlify="true" name="contact" method="POST">
               <div class="name">
                 <label for="name">Your Name</label>
                 <input type="text" name="name" id="name" placeholder="What's your name?" autocomplete="off">
@@ -279,7 +279,9 @@
                 <textarea id="expandingTextArea" name="message" placeholder="What’s your message?" rows="3" required></textarea>
                 <span class="input-bottom-line"></span>
               </div>
-                  
+              
+              <div data-netlify-recaptcha="true"></div>
+
               <div>
                 <button type="submit" class="special">
                   <span>
@@ -342,6 +344,9 @@
 
   <!-- Main JS File -->
   <script src="./js/app.js"></script>
+
+  <!-- Contact Form JS File -->
+  <script src="./js/contact-form.js"></script>
 
 </body>
 </html>
