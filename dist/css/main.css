@@ -167,6 +167,14 @@ section.contacts {
 .contacts-wrapper .right-side form select option {
   padding-left: 20px;
   padding-right: 50px;
+  transition: all 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+}
+.contacts-wrapper .right-side form select option:hover {
+  background: red;
+}
+.contacts-wrapper .right-side form select:focus > option:checked {
+  background: #ccc !important;
+  color: #FCFCFC;
 }
 .contacts-wrapper .right-side form select:active,
 .contacts-wrapper .right-side form select:focus {
@@ -311,6 +319,7 @@ section.contacts {
 }
 .contacts-wrapper .right-side .contact-form .button-notification-container .alert.alert-success p {
   color: #0F141E !important;
+  font-weight: 700;
 }
 .contacts-wrapper .right-side .contact-form .button-notification-container .alert.alert-success.hidden {
   display: none;
@@ -318,6 +327,7 @@ section.contacts {
 .contacts-wrapper .right-side .contact-form .button-notification-container .alert.alert-error p {
   margin-top: 2px;
   color: #ff8c8c !important;
+  font-weight: 700;
 }
 .contacts-wrapper .right-side .contact-form .button-notification-container .alert.alert-error img {
   filter: invert(88%) sepia(36%) saturate(3330%) hue-rotate(302deg) brightness(100%) contrast(101%);
