@@ -242,6 +242,7 @@
           
           <div class="right-side">
             <form class="contact-form" data-netlify="true" name="contact" method="POST">
+              <input type="hidden" name="subject" value="Form submission from yyordanov.com" />
               <div class="name">
                 <label for="name">Your Name</label>
                 <input type="text" name="name" id="name" placeholder="What's your name?" autocomplete="off">
@@ -280,7 +281,7 @@
                 <span class="input-bottom-line"></span>
               </div>
               
-              <div data-netlify-recaptcha="true" class="recaptcha"></div>
+              <div class="recaptcha" data-netlify-recaptcha="true"></div>
 
               <div>
                 <button type="submit" class="special">
