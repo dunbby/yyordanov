@@ -245,19 +245,19 @@
               <input type="hidden" name="subject" value="Form submission from yyordanov.com" />
               <div class="name">
                 <label for="name">Your Name</label>
-                <input type="text" name="name" id="name" placeholder="What's your name?" autocomplete="off" >
+                <input type="text" name="name" id="name" placeholder="What's your name?" autocomplete="off" required>
                 <span class="input-bottom-line"></span>
               </div>
 
               <div class="email">
                 <label for="email">Your Email</label>
-                <input type="email" name="email" id="email" placeholder="What's your email?" autocomplete="off" >
+                <input type="email" name="email" id="email" placeholder="What's your email?" autocomplete="off" required>
                 <span class="input-bottom-line"></span>
               </div>
 
               <div class="service">
                 <label for="service">Service</label>
-                <select name="service" id="service" >
+                <select name="service" id="service" required>
                   <option value="0" disabled selected>What are you interested in?</option>
                   <option value="one-off-project">Need help with one-off project</option>
                   <option value="long-term-partner">Looking for a long term partnership</option>
@@ -279,7 +279,7 @@
 
               <div class="message">
                 <label for="message">Message</label>
-                <textarea id="expandingTextArea" name="message" placeholder="What’s your message?" rows="3" ></textarea>
+                <textarea id="expandingTextArea" name="message" placeholder="What’s your message?" rows="3" required></textarea>
                 <span class="input-bottom-line"></span>
               </div>
               
