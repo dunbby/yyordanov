@@ -141,8 +141,19 @@ section.contacts {
         option {
           padding-left: 20px;
           padding-right: 50px;
+          transition: all 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+
+          &:hover {
+            background: red;
+          }
         }
       }
+
+      select:focus > option:checked { 
+        background: $medium !important;
+        color: $white;
+      }
+
       select:active,
       select:focus {
         background-color: $light;
@@ -303,6 +314,7 @@ section.contacts {
           &.alert-success {
             p {
               color: $black !important;
+              font-weight: 700;
             }
 
             &.hidden {
@@ -313,6 +325,7 @@ section.contacts {
             p {
               margin-top: 2px;
               color: $error !important;
+              font-weight: 700;
             }
             img {
               filter: invert(88%) sepia(36%) saturate(3330%) hue-rotate(302deg) brightness(100%) contrast(101%);

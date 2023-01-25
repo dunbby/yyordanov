@@ -1,4 +1,4 @@
-// Handle Form Submission via Netlify
+// Handle the Form Submission via Netlify
 const handleSubmit = (event) => {
   event.preventDefault();
 
@@ -24,6 +24,7 @@ function showAlert(response) {
   const sendBtn = document.querySelector(".send-btn");
   const alertSuccess = document.querySelector(".alert-success");
   const alertError = document.querySelector(".alert-error");
+  const errorMsg = document.querySelector(".error-msg");
 
   sendBtn.classList.add("hidden");
   btn.classList.add("button-loading");
@@ -33,6 +34,7 @@ function showAlert(response) {
 
     if(response) {
       alertError.classList.remove("hidden");
+      errorMsg.innerHTML = `${response}`;
     } 
     else {
       alertSuccess.classList.remove("hidden");
