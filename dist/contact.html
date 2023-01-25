@@ -245,23 +245,24 @@
               <input type="hidden" name="subject" value="Form submission from yyordanov.com" />
               <div class="name">
                 <label for="name">Your Name</label>
-                <input type="text" name="name" id="name" placeholder="What's your name?" autocomplete="off">
+                <input type="text" name="name" id="name" placeholder="What's your name?" autocomplete="off" >
                 <span class="input-bottom-line"></span>
               </div>
 
               <div class="email">
                 <label for="email">Your Email</label>
-                <input type="email" name="email" id="email" placeholder="What's your email?" autocomplete="off">
+                <input type="email" name="email" id="email" placeholder="What's your email?" autocomplete="off" >
                 <span class="input-bottom-line"></span>
               </div>
 
               <div class="service">
                 <label for="service">Service</label>
-                <select name="service" id="service">
+                <select name="service" id="service" >
                   <option value="0" disabled selected>What are you interested in?</option>
-                  <option value="1">Test 1</option>
-                  <option value="2">test 2</option>
-                  <option value="3">test 3</option>
+                  <option value="one-off-project">Need help with one-off project</option>
+                  <option value="long-term-partner">Looking for a long term partnership</option>
+                  <option value="hire-full-time">Want to hire me full-time</option>
+                  <option value="something-else">Something else</option>
                 </select>
               </div>
 
@@ -269,23 +270,24 @@
                 <label for="budget">Budget</label>
                 <select name="budget" id="budget">
                   <option value="0" disabled selected>What is your budget?</option>
-                  <option value="1">Test 1</option>
-                  <option value="2">test 2</option>
-                  <option value="3">test 3</option>
+                  <option value="500+">$500 - $1000</option>
+                  <option value="1000+">$1000 - $3000</option>
+                  <option value="3000+">$3000 - $5000</option>
+                  <option value="5000+">$5000 or more</option>
                 </select>
               </div>
 
               <div class="message">
                 <label for="message">Message</label>
-                <textarea id="expandingTextArea" name="message" placeholder="What’s your message?" rows="3" required></textarea>
+                <textarea id="expandingTextArea" name="message" placeholder="What’s your message?" rows="3" ></textarea>
                 <span class="input-bottom-line"></span>
               </div>
               
               <div class="recaptcha" data-netlify-recaptcha="true"></div>
 
-              <div>
-                <button type="submit" class="special">
-                  <span>
+              <div class="button-notification-container">
+                <button type="submit" class="special contact-btn">
+                  <span class="send-btn">
                     <span class="icon">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.621 26.621">
                         <g id="Icon_feather-send" data-name="Icon feather-send" transform="translate(-1.5 -0.879)">
@@ -296,7 +298,13 @@
                     </span>
                     Send message
                   </span>
-                </button>              
+                </button> 
+                <div class="alert alert-success hidden">
+                  <img src="./assets/img/alert-success.svg"><p>Message sent. I will get back to you soon.</p>
+                </div>             
+                <div class="alert alert-error hidden">
+                  <img src="./assets/img/alert-error.svg"><p>Something went wrong, please try again.</p>
+                </div>             
               </div>
 
             </form>

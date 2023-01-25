@@ -200,11 +200,51 @@ section.contacts {
         align-items: center;
         justify-content: center;
       }
+      .send-btn.hidden {
+        display: none;
+      }
       button > span .icon {
         height: 22px;
         width: 22px;
         margin-right: 10px;
-      }    
+      }
+      
+      .button-loading > span {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      button.button-loading:active:after,
+      button.button-loading:hover:after {
+        opacity: 0;
+      }
+
+      .button-loading::before {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        border: 4px solid transparent;
+        border-top-color: $black;
+        border-radius: 50%;
+        animation: button-loading-spinner 1s ease infinite;
+      }
+      
+      @keyframes button-loading-spinner {
+        from {
+          transform: rotate(0turn);
+        }
+      
+        to {
+          transform: rotate(1turn);
+        }
+      }
+      
     }
 
     .contact-form {
@@ -213,7 +253,8 @@ section.contacts {
       "name email"
       "service budget"
       "message message"
-      "recaptcha recaptcha";
+      "recaptcha recaptcha"
+      "btn btn";
       grid-gap: 2rem;
 
       label {
@@ -247,6 +288,40 @@ section.contacts {
       }
       .recaptcha {
         grid-area: recaptcha;
+      }
+      .button-notification-container {
+        grid-area: btn;
+        .alert {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+
+          img {
+            width: 25px;
+            margin-right: 10px;
+          }
+          &.alert-success {
+            p {
+              color: $black !important;
+            }
+
+            &.hidden {
+              display: none;
+            }
+          } 
+          &.alert-error {
+            p {
+              margin-top: 2px;
+              color: $error !important;
+            }
+            img {
+              filter: invert(88%) sepia(36%) saturate(3330%) hue-rotate(302deg) brightness(100%) contrast(101%);
+            }
+            &.hidden {
+              display: none;
+            }
+          } 
+        }
       }
     }
   }
