@@ -767,7 +767,7 @@ $('.website-link').mousemove(function(e){
 });
 
 function callParallax(e){
-  parallaxIt(e, '.circle', 80);
+  parallaxIt(e, '.circle', 60);
   parallaxIt(e, '.content', 40);
 }
 
