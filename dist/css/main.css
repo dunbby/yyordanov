@@ -630,7 +630,7 @@ section.project-services .row.flex-end .website-link .circle {
   position: absolute;
   height: 50px;
   width: 50px;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 1px solid #ccc;
   display: flex;
   align-items: center;
   justify-content: center;
