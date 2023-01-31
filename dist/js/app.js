@@ -751,4 +751,34 @@ function initPageTransitions() {
   }
 }
 
+/* ---------------- MAGNETIC BUTTON --------------- */
+$('.website-link').mouseleave(function(e){
+  TweenMax.to(this, 0.3, {height: 100, width: 100});
+  TweenMax.to('.circle, .content', 0.3,{x: 0, y: 0});
+});
 
+$('.website-link').mouseenter(function(e){
+  TweenMax.to(this, 0.3, {height: 100, width: 100});
+  TweenMax.to('.circle', 0.3);
+});
+
+$('.website-link').mousemove(function(e){   
+  callParallax(e);
+});
+
+function callParallax(e){
+  parallaxIt(e, '.circle', 80);
+  parallaxIt(e, '.content', 40);
+}
+
+function parallaxIt(e, target, movement){
+  var $this = $('.website-link');
+  var relX = e.pageX - $this.offset().left;
+  var relY = e.pageY - $this.offset().top;
+  
+  TweenMax.to(target, 0.3, {
+    x: (relX - $this.width()/2) / $this.width() * movement,
+    y: (relY - $this.height()/2) / $this.height() * movement,
+    ease: Power2.easeOut
+  });
+}

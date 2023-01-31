@@ -56,8 +56,47 @@ section.project {
       }
     }
     
-  }
+    .row.flex-end {
+      justify-content: flex-end;
 
+      .website-link{
+        display: flex;
+        position: relative;
+        height: 100px;
+        width: 100px;
+        justify-content: center;
+        align-items: center;
+
+        .circle {
+          position: absolute;
+          height: 50px;
+          width: 50px;
+          border-bottom: 2px solid $medium;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.2rem;
+          color: $white;
+        }
+  
+        .content {
+          font-size: 1.2rem;
+          color: $black;
+          z-index: 1;
+          img {
+            width: .66rem;
+            margin-left: .33rem;
+            transform: rotate(-90deg) translateX(-.05em);
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  
   &-photos {
     padding: 10rem 0;
     margin-bottom: 0;
