@@ -2060,7 +2060,7 @@ footer .wrapper .copyright > div .small .icon-heart img {
     background-position: 60% 10% !important;
   }
   header#header.header-home ul li span,
-header#header.header-home ul li a {
+  header#header.header-home ul li a {
     color: #0F141E;
   }
   header#header.header-home ul li .cta-btn {
@@ -2325,7 +2325,7 @@ header#header.header-home ul li a {
     align-items: flex-start;
   }
   .contacts-wrapper .right-side,
-.contacts-wrapper .left-side {
+  .contacts-wrapper .left-side {
     width: 100%;
     padding-top: 4.35rem;
   }
